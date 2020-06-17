@@ -10,11 +10,15 @@
 		1CA7AD10249AA5980064282D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD0F249AA5980064282D /* AppDelegate.swift */; };
 		1CA7AD12249AA5980064282D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD11249AA5980064282D /* SceneDelegate.swift */; };
 		1CA7AD14249AA5980064282D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD13249AA5980064282D /* ViewController.swift */; };
-		1CA7AD17249AA5980064282D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7AD15249AA5980064282D /* Main.storyboard */; };
 		1CA7AD19249AA59C0064282D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7AD18249AA59C0064282D /* Assets.xcassets */; };
 		1CA7AD1C249AA59C0064282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */; };
 		1CA7AD27249AA59D0064282D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD26249AA59D0064282D /* PrototypeTests.swift */; };
 		1CA7AD32249AA59D0064282D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD31249AA59D0064282D /* PrototypeUITests.swift */; };
+		1CBEB97D249AA7D600097D01 /* RotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */; };
+		1CBEB97F249AA7EE00097D01 /* NumberAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */; };
+		1CBEB981249AA81900097D01 /* ClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBEB980249AA81900097D01 /* ClockView.xib */; };
+		1CBEB985249AA97300097D01 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB984249AA97300097D01 /* ClockView.swift */; };
+		1CBEB987249AAB7100097D01 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB986249AAB7100097D01 /* ClockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,7 +43,6 @@
 		1CA7AD0F249AA5980064282D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA7AD11249AA5980064282D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1CA7AD13249AA5980064282D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		1CA7AD16249AA5980064282D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		1CA7AD18249AA59C0064282D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1CA7AD1B249AA59C0064282D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CA7AD1D249AA59C0064282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -49,6 +52,11 @@
 		1CA7AD2D249AA59D0064282D /* PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA7AD31249AA59D0064282D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		1CA7AD33249AA59D0064282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationAnimation.swift; sourceTree = "<group>"; };
+		1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAnimation.swift; sourceTree = "<group>"; };
+		1CBEB980249AA81900097D01 /* ClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockView.xib; sourceTree = "<group>"; };
+		1CBEB984249AA97300097D01 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		1CBEB986249AAB7100097D01 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,10 +107,12 @@
 		1CA7AD0E249AA5980064282D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
+				1CBEB97B249AA72700097D01 /* ViewModel */,
+				1CBEB97A249AA71600097D01 /* VIew */,
+				1CBEB979249AA6FA00097D01 /* Model */,
 				1CA7AD0F249AA5980064282D /* AppDelegate.swift */,
 				1CA7AD11249AA5980064282D /* SceneDelegate.swift */,
 				1CA7AD13249AA5980064282D /* ViewController.swift */,
-				1CA7AD15249AA5980064282D /* Main.storyboard */,
 				1CA7AD18249AA59C0064282D /* Assets.xcassets */,
 				1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */,
 				1CA7AD1D249AA59C0064282D /* Info.plist */,
@@ -126,6 +136,32 @@
 				1CA7AD33249AA59D0064282D /* Info.plist */,
 			);
 			path = PrototypeUITests;
+			sourceTree = "<group>";
+		};
+		1CBEB979249AA6FA00097D01 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		1CBEB97A249AA71600097D01 /* VIew */ = {
+			isa = PBXGroup;
+			children = (
+				1CBEB980249AA81900097D01 /* ClockView.xib */,
+				1CBEB984249AA97300097D01 /* ClockView.swift */,
+			);
+			path = VIew;
+			sourceTree = "<group>";
+		};
+		1CBEB97B249AA72700097D01 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */,
+				1CBEB986249AAB7100097D01 /* ClockViewController.swift */,
+				1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */,
+			);
+			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,8 +269,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CA7AD1C249AA59C0064282D /* LaunchScreen.storyboard in Resources */,
+				1CBEB981249AA81900097D01 /* ClockView.xib in Resources */,
 				1CA7AD19249AA59C0064282D /* Assets.xcassets in Resources */,
-				1CA7AD17249AA5980064282D /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -260,7 +296,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				1CA7AD14249AA5980064282D /* ViewController.swift in Sources */,
+				1CBEB985249AA97300097D01 /* ClockView.swift in Sources */,
 				1CA7AD10249AA5980064282D /* AppDelegate.swift in Sources */,
+				1CBEB987249AAB7100097D01 /* ClockViewController.swift in Sources */,
+				1CBEB97D249AA7D600097D01 /* RotationAnimation.swift in Sources */,
+				1CBEB97F249AA7EE00097D01 /* NumberAnimation.swift in Sources */,
 				1CA7AD12249AA5980064282D /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,14 +337,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		1CA7AD15249AA5980064282D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CA7AD16249AA5980064282D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
