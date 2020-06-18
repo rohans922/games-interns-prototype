@@ -7,18 +7,28 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1C156D4A249BE91900BE2F95 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C156D48249BE91900BE2F95 /* ClockViewController.swift */; };
+		1C156D4B249BE91900BE2F95 /* ClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D49249BE91900BE2F95 /* ClockViewController.xib */; };
+		1C156D4F249BEE0B00BE2F95 /* NumbersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C156D4E249BEE0B00BE2F95 /* NumbersView.swift */; };
+		1C156D51249BEE3700BE2F95 /* NumbersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D50249BEE3700BE2F95 /* NumbersView.xib */; };
+		1C156D53249BF66E00BE2F95 /* ClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D52249BF66E00BE2F95 /* ClockView.xib */; };
+		1C156D55249BF68100BE2F95 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C156D54249BF68100BE2F95 /* ClockView.swift */; };
+		1C156D6D249C060800BE2F95 /* 6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D65249C060800BE2F95 /* 6.png */; };
+		1C156D6E249C060800BE2F95 /* 8.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D66249C060800BE2F95 /* 8.png */; };
+		1C156D6F249C060800BE2F95 /* 2.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D67249C060800BE2F95 /* 2.png */; };
+		1C156D70249C060800BE2F95 /* 1.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D68249C060800BE2F95 /* 1.png */; };
+		1C156D71249C060800BE2F95 /* 7.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D69249C060800BE2F95 /* 7.png */; };
+		1C156D72249C060800BE2F95 /* 3.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D6A249C060800BE2F95 /* 3.png */; };
+		1C156D73249C060800BE2F95 /* 5.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D6B249C060800BE2F95 /* 5.png */; };
+		1C156D74249C060800BE2F95 /* 4.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D6C249C060800BE2F95 /* 4.png */; };
+		1C156D77249C061100BE2F95 /* minute.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D75249C061100BE2F95 /* minute.png */; };
+		1C156D78249C061100BE2F95 /* hour.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D76249C061100BE2F95 /* hour.png */; };
+		1C156D7A249C0A8F00BE2F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */; };
 		1CA7AD10249AA5980064282D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD0F249AA5980064282D /* AppDelegate.swift */; };
 		1CA7AD12249AA5980064282D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD11249AA5980064282D /* SceneDelegate.swift */; };
-		1CA7AD14249AA5980064282D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD13249AA5980064282D /* ViewController.swift */; };
 		1CA7AD19249AA59C0064282D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7AD18249AA59C0064282D /* Assets.xcassets */; };
-		1CA7AD1C249AA59C0064282D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */; };
 		1CA7AD27249AA59D0064282D /* PrototypeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD26249AA59D0064282D /* PrototypeTests.swift */; };
 		1CA7AD32249AA59D0064282D /* PrototypeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CA7AD31249AA59D0064282D /* PrototypeUITests.swift */; };
-		1CBEB97D249AA7D600097D01 /* RotationAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */; };
-		1CBEB97F249AA7EE00097D01 /* NumberAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */; };
-		1CBEB981249AA81900097D01 /* ClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1CBEB980249AA81900097D01 /* ClockView.xib */; };
-		1CBEB985249AA97300097D01 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB984249AA97300097D01 /* ClockView.swift */; };
-		1CBEB987249AAB7100097D01 /* ClockViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1CBEB986249AAB7100097D01 /* ClockViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,12 +49,27 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1C156D48249BE91900BE2F95 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
+		1C156D49249BE91900BE2F95 /* ClockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockViewController.xib; sourceTree = "<group>"; };
+		1C156D4E249BEE0B00BE2F95 /* NumbersView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumbersView.swift; sourceTree = "<group>"; };
+		1C156D50249BEE3700BE2F95 /* NumbersView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NumbersView.xib; sourceTree = "<group>"; };
+		1C156D52249BF66E00BE2F95 /* ClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockView.xib; sourceTree = "<group>"; };
+		1C156D54249BF68100BE2F95 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
+		1C156D65249C060800BE2F95 /* 6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6.png; sourceTree = "<group>"; };
+		1C156D66249C060800BE2F95 /* 8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8.png; sourceTree = "<group>"; };
+		1C156D67249C060800BE2F95 /* 2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 2.png; sourceTree = "<group>"; };
+		1C156D68249C060800BE2F95 /* 1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1.png; sourceTree = "<group>"; };
+		1C156D69249C060800BE2F95 /* 7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7.png; sourceTree = "<group>"; };
+		1C156D6A249C060800BE2F95 /* 3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3.png; sourceTree = "<group>"; };
+		1C156D6B249C060800BE2F95 /* 5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5.png; sourceTree = "<group>"; };
+		1C156D6C249C060800BE2F95 /* 4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4.png; sourceTree = "<group>"; };
+		1C156D75249C061100BE2F95 /* minute.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = minute.png; sourceTree = "<group>"; };
+		1C156D76249C061100BE2F95 /* hour.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hour.png; sourceTree = "<group>"; };
+		1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CA7AD0C249AA5980064282D /* Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA7AD0F249AA5980064282D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA7AD11249AA5980064282D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		1CA7AD13249AA5980064282D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		1CA7AD18249AA59C0064282D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		1CA7AD1B249AA59C0064282D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1CA7AD1D249AA59C0064282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		1CA7AD22249AA59D0064282D /* PrototypeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA7AD26249AA59D0064282D /* PrototypeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeTests.swift; sourceTree = "<group>"; };
@@ -52,11 +77,6 @@
 		1CA7AD2D249AA59D0064282D /* PrototypeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PrototypeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA7AD31249AA59D0064282D /* PrototypeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrototypeUITests.swift; sourceTree = "<group>"; };
 		1CA7AD33249AA59D0064282D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RotationAnimation.swift; sourceTree = "<group>"; };
-		1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberAnimation.swift; sourceTree = "<group>"; };
-		1CBEB980249AA81900097D01 /* ClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockView.xib; sourceTree = "<group>"; };
-		1CBEB984249AA97300097D01 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
-		1CBEB986249AAB7100097D01 /* ClockViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -84,6 +104,47 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1C156D60249C04A600BE2F95 /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				1C156D61249C04AD00BE2F95 /* Images */,
+			);
+			path = Assets;
+			sourceTree = "<group>";
+		};
+		1C156D61249C04AD00BE2F95 /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				1C156D62249C04B200BE2F95 /* Clock Elements */,
+			);
+			path = Images;
+			sourceTree = "<group>";
+		};
+		1C156D62249C04B200BE2F95 /* Clock Elements */ = {
+			isa = PBXGroup;
+			children = (
+				1C156D76249C061100BE2F95 /* hour.png */,
+				1C156D75249C061100BE2F95 /* minute.png */,
+				1C156D64249C04D200BE2F95 /* Numbers */,
+			);
+			path = "Clock Elements";
+			sourceTree = "<group>";
+		};
+		1C156D64249C04D200BE2F95 /* Numbers */ = {
+			isa = PBXGroup;
+			children = (
+				1C156D68249C060800BE2F95 /* 1.png */,
+				1C156D67249C060800BE2F95 /* 2.png */,
+				1C156D6A249C060800BE2F95 /* 3.png */,
+				1C156D6C249C060800BE2F95 /* 4.png */,
+				1C156D6B249C060800BE2F95 /* 5.png */,
+				1C156D65249C060800BE2F95 /* 6.png */,
+				1C156D69249C060800BE2F95 /* 7.png */,
+				1C156D66249C060800BE2F95 /* 8.png */,
+			);
+			path = Numbers;
+			sourceTree = "<group>";
+		};
 		1CA7AD03249AA5970064282D = {
 			isa = PBXGroup;
 			children = (
@@ -107,14 +168,17 @@
 		1CA7AD0E249AA5980064282D /* Prototype */ = {
 			isa = PBXGroup;
 			children = (
-				1CBEB97B249AA72700097D01 /* ViewModel */,
-				1CBEB97A249AA71600097D01 /* VIew */,
-				1CBEB979249AA6FA00097D01 /* Model */,
+				1C156D60249C04A600BE2F95 /* Assets */,
 				1CA7AD0F249AA5980064282D /* AppDelegate.swift */,
 				1CA7AD11249AA5980064282D /* SceneDelegate.swift */,
-				1CA7AD13249AA5980064282D /* ViewController.swift */,
+				1C156D48249BE91900BE2F95 /* ClockViewController.swift */,
+				1C156D49249BE91900BE2F95 /* ClockViewController.xib */,
+				1C156D4E249BEE0B00BE2F95 /* NumbersView.swift */,
+				1C156D50249BEE3700BE2F95 /* NumbersView.xib */,
+				1C156D54249BF68100BE2F95 /* ClockView.swift */,
+				1C156D52249BF66E00BE2F95 /* ClockView.xib */,
 				1CA7AD18249AA59C0064282D /* Assets.xcassets */,
-				1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */,
+				1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */,
 				1CA7AD1D249AA59C0064282D /* Info.plist */,
 			);
 			path = Prototype;
@@ -136,32 +200,6 @@
 				1CA7AD33249AA59D0064282D /* Info.plist */,
 			);
 			path = PrototypeUITests;
-			sourceTree = "<group>";
-		};
-		1CBEB979249AA6FA00097D01 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
-		1CBEB97A249AA71600097D01 /* VIew */ = {
-			isa = PBXGroup;
-			children = (
-				1CBEB980249AA81900097D01 /* ClockView.xib */,
-				1CBEB984249AA97300097D01 /* ClockView.swift */,
-			);
-			path = VIew;
-			sourceTree = "<group>";
-		};
-		1CBEB97B249AA72700097D01 /* ViewModel */ = {
-			isa = PBXGroup;
-			children = (
-				1CBEB97C249AA7D600097D01 /* RotationAnimation.swift */,
-				1CBEB986249AAB7100097D01 /* ClockViewController.swift */,
-				1CBEB97E249AA7EE00097D01 /* NumberAnimation.swift */,
-			);
-			path = ViewModel;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -268,9 +306,21 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA7AD1C249AA59C0064282D /* LaunchScreen.storyboard in Resources */,
-				1CBEB981249AA81900097D01 /* ClockView.xib in Resources */,
+				1C156D72249C060800BE2F95 /* 3.png in Resources */,
+				1C156D77249C061100BE2F95 /* minute.png in Resources */,
+				1C156D70249C060800BE2F95 /* 1.png in Resources */,
+				1C156D7A249C0A8F00BE2F95 /* LaunchScreen.storyboard in Resources */,
+				1C156D6D249C060800BE2F95 /* 6.png in Resources */,
+				1C156D74249C060800BE2F95 /* 4.png in Resources */,
+				1C156D53249BF66E00BE2F95 /* ClockView.xib in Resources */,
+				1C156D6F249C060800BE2F95 /* 2.png in Resources */,
 				1CA7AD19249AA59C0064282D /* Assets.xcassets in Resources */,
+				1C156D4B249BE91900BE2F95 /* ClockViewController.xib in Resources */,
+				1C156D71249C060800BE2F95 /* 7.png in Resources */,
+				1C156D78249C061100BE2F95 /* hour.png in Resources */,
+				1C156D73249C060800BE2F95 /* 5.png in Resources */,
+				1C156D51249BEE3700BE2F95 /* NumbersView.xib in Resources */,
+				1C156D6E249C060800BE2F95 /* 8.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -295,13 +345,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				1CA7AD14249AA5980064282D /* ViewController.swift in Sources */,
-				1CBEB985249AA97300097D01 /* ClockView.swift in Sources */,
 				1CA7AD10249AA5980064282D /* AppDelegate.swift in Sources */,
-				1CBEB987249AAB7100097D01 /* ClockViewController.swift in Sources */,
-				1CBEB97D249AA7D600097D01 /* RotationAnimation.swift in Sources */,
-				1CBEB97F249AA7EE00097D01 /* NumberAnimation.swift in Sources */,
+				1C156D55249BF68100BE2F95 /* ClockView.swift in Sources */,
+				1C156D4F249BEE0B00BE2F95 /* NumbersView.swift in Sources */,
 				1CA7AD12249AA5980064282D /* SceneDelegate.swift in Sources */,
+				1C156D4A249BE91900BE2F95 /* ClockViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -335,17 +383,6 @@
 			targetProxy = 1CA7AD2E249AA59D0064282D /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		1CA7AD1A249AA59C0064282D /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				1CA7AD1B249AA59C0064282D /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		1CA7AD34249AA59D0064282D /* Debug */ = {
