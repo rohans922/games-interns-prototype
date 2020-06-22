@@ -53,8 +53,6 @@ class NumbersView: UIView {
         print(image1.center.y)
         
        
-       
-        
         let translation2 = sender.translation(in: image2)
         image2.center.x += translation2.x
         image2.center.y += translation2.y
@@ -63,20 +61,20 @@ class NumbersView: UIView {
         print(image2.center.x)
         print(image2.center.y)
         
-        if(image1.center.x >= image2.center.x - 2 || image1.center.x <= image2.center.x + 2){
+        
+        if(image1.center.x >= image2.center.x - 0.5 || image1.center.x <= image2.center.x + 0.5 && image1.center.y >= image2.center.y - 0.5 || image1.center.y <= image2.center.y + 0.5 ){
                 
                 swapPlaces()
             }
                     
         }
     
-    
-    
+    // Function to swap 2 (image) views
     func swapPlaces() -> Void {
         view1Frame = image1.frame;
         view2Frame = image2.frame;
 
-        if (image1.frame.intersects(image2.frame)) {
+        if(image1.frame.intersects(image2.frame)) {
             
             image1.frame = view2Frame!;
             image2.frame = view1Frame!;
@@ -87,7 +85,7 @@ class NumbersView: UIView {
     }
 
     
-    // Function to swap 2 (image) views
+    
     
 
 
