@@ -19,7 +19,8 @@ class NumbersView: UIView {
     
     //@IBOutlet var numbers: [UIView]!
  
-    var x_1 : Int = 0
+    var view1Frame: CGRect?
+    var view2Frame: CGRect?
     
     
     override init(frame: CGRect) {
@@ -47,34 +48,49 @@ class NumbersView: UIView {
         image1.center.x += translation.x
         image1.center.y += translation.y
         sender.setTranslation(.zero, in: image1)
-//        print(image1.center.x)
-//        print(image1.center.y)
         
-        x_1 = Int(image1.center.x)
+        print(image1.center.x)
+        print(image1.center.y)
+        
+       
        
         
         let translation2 = sender.translation(in: image2)
         image2.center.x += translation2.x
         image2.center.y += translation2.y
         sender.setTranslation(.zero, in: image2)
-//        print(image2.center.x)
-//        print(image2.center.y)
         
+        print(image2.center.x)
+        print(image2.center.y)
+        
+        if(image1.center.x >= image2.center.x - 2 || image1.center.x <= image2.center.x + 2){
                 
+                swapPlaces()
+            }
+                    
         }
+    
+    
+    
+    func swapPlaces() -> Void {
+        view1Frame = image1.frame;
+        view2Frame = image2.frame;
+
+        if (image1.frame.intersects(image2.frame)) {
+            
+            image1.frame = view2Frame!;
+            image2.frame = view1Frame!;
+           
+        }
+    }
+    
     }
 
     
     // Function to swap 2 (image) views
     
 
-func swapPlaces(xcoor:Int) {
-    
-    if(xcoor == 0){
-        
-    }
-    
-    }
+
 
 
     
