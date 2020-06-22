@@ -10,8 +10,10 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumbersView" customModule="Prototype" customModuleProvider="target">
             <connections>
                 <outlet property="image1" destination="29P-dB-PPX" id="gdq-zo-qps"/>
+                <outlet property="image2" destination="t8m-Fv-blk" id="hCI-jT-jFK"/>
                 <outlet property="numbersView" destination="iN0-l3-epB" id="lEB-Aa-gmV"/>
                 <outlet property="oneGestureRecognizer" destination="iUD-lu-L0K" id="f5M-OQ-LO2"/>
+                <outlet property="twoGR" destination="mZc-mp-UnU" id="dSV-ZE-hFJ"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -29,7 +31,7 @@
                     </connections>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="nL7-cq-cwR">
-                    <rect key="frame" x="162" y="162" width="25" height="25"/>
+                    <rect key="frame" x="162" y="26" width="25" height="25"/>
                     <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="2cC-BL-3ml"/>
@@ -92,6 +94,15 @@
                         <constraint firstAttribute="width" constant="25" id="dN7-8x-E4g"/>
                     </constraints>
                 </imageView>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="t8m-Fv-blk">
+                    <rect key="frame" x="204" y="180" width="50" height="52"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemOrangeColor" red="1" green="0.58431372550000005" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="mZc-mp-UnU" appends="YES" id="4be-Bo-HqZ"/>
+                    </connections>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <gestureRecognizers/>
@@ -118,6 +129,11 @@
         <panGestureRecognizer minimumNumberOfTouches="1" id="iUD-lu-L0K">
             <connections>
                 <action selector="didMoveOne:" destination="-1" id="taJ-Cw-NEC"/>
+            </connections>
+        </panGestureRecognizer>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="mZc-mp-UnU">
+            <connections>
+                <action selector="didMoveOne:" destination="-1" id="JPY-fW-9cm"/>
             </connections>
         </panGestureRecognizer>
     </objects>
