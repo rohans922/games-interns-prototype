@@ -9,15 +9,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumbersView" customModule="Prototype" customModuleProvider="target">
             <connections>
+                <outlet property="image1" destination="29P-dB-PPX" id="gdq-zo-qps"/>
                 <outlet property="numbersView" destination="iN0-l3-epB" id="lEB-Aa-gmV"/>
-                <outletCollection property="numbers" destination="nL7-cq-cwR" collectionClass="NSMutableArray" id="JB9-dD-uVX"/>
-                <outletCollection property="numbers" destination="jvr-Cg-SA2" collectionClass="NSMutableArray" id="buF-Rc-fRT"/>
-                <outletCollection property="numbers" destination="AxE-Fj-E9T" collectionClass="NSMutableArray" id="ULL-Kb-JMD"/>
-                <outletCollection property="numbers" destination="1gG-Lz-w31" collectionClass="NSMutableArray" id="KLs-7g-4Ht"/>
-                <outletCollection property="numbers" destination="tJW-LW-93q" collectionClass="NSMutableArray" id="GiZ-XU-iDZ"/>
-                <outletCollection property="numbers" destination="DrY-2n-Pyg" collectionClass="NSMutableArray" id="GIv-nC-QcX"/>
-                <outletCollection property="numbers" destination="l2W-eg-yEh" collectionClass="NSMutableArray" id="sD5-uR-HyL"/>
-                <outletCollection property="numbers" destination="2tL-qt-RLR" collectionClass="NSMutableArray" id="qlq-e6-WId"/>
+                <outlet property="oneGestureRecognizer" destination="iUD-lu-L0K" id="f5M-OQ-LO2"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -25,8 +19,18 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="nL7-cq-cwR">
-                    <rect key="frame" x="162.5" y="0.0" width="25" height="25"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="29P-dB-PPX">
+                    <rect key="frame" x="55" y="111" width="51" height="59"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemPurpleColor" red="0.68627450980000004" green="0.32156862749999998" blue="0.87058823529999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <gestureRecognizers/>
+                    <connections>
+                        <outletCollection property="gestureRecognizers" destination="iUD-lu-L0K" appends="YES" id="E2O-ZE-fXr"/>
+                    </connections>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="nL7-cq-cwR">
+                    <rect key="frame" x="162" y="162" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="2cC-BL-3ml"/>
                         <constraint firstAttribute="width" constant="25" id="g5U-7T-V9S"/>
@@ -34,6 +38,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-LW-93q">
                     <rect key="frame" x="162.5" y="325" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="Fzu-Ck-Pxk"/>
                         <constraint firstAttribute="width" constant="25" id="Q3G-Qc-F1S"/>
@@ -41,6 +46,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3.png" translatesAutoresizingMaskIntoConstraints="NO" id="AxE-Fj-E9T">
                     <rect key="frame" x="325" y="162.5" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="afX-gI-7EX"/>
                         <constraint firstAttribute="height" constant="25" id="xvC-Tz-hrP"/>
@@ -48,6 +54,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7.png" translatesAutoresizingMaskIntoConstraints="NO" id="l2W-eg-yEh">
                     <rect key="frame" x="0.0" y="162.5" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="c6c-6Z-QCt"/>
                         <constraint firstAttribute="width" constant="25" id="xoK-tE-i2C"/>
@@ -55,6 +62,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8.png" translatesAutoresizingMaskIntoConstraints="NO" id="2tL-qt-RLR">
                     <rect key="frame" x="50" y="50" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="Zej-Xz-ehD"/>
                         <constraint firstAttribute="width" constant="25" id="aW7-gb-hpl"/>
@@ -62,6 +70,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.png" translatesAutoresizingMaskIntoConstraints="NO" id="jvr-Cg-SA2">
                     <rect key="frame" x="275" y="50" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="BE1-7s-swM"/>
                         <constraint firstAttribute="height" constant="25" id="hWe-EL-b6E"/>
@@ -69,6 +78,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gG-Lz-w31">
                     <rect key="frame" x="275" y="275" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="width" constant="25" id="ARx-TJ-AE8"/>
                         <constraint firstAttribute="height" constant="25" id="CzN-gX-bLl"/>
@@ -76,6 +86,7 @@
                 </imageView>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6.png" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2n-Pyg">
                     <rect key="frame" x="50" y="275" width="25" height="25"/>
+                    <gestureRecognizers/>
                     <constraints>
                         <constraint firstAttribute="height" constant="25" id="CdM-C6-guf"/>
                         <constraint firstAttribute="width" constant="25" id="dN7-8x-E4g"/>
@@ -83,6 +94,7 @@
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
                 <constraint firstItem="l2W-eg-yEh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0tg-6r-5jj"/>
                 <constraint firstAttribute="bottom" secondItem="1gG-Lz-w31" secondAttribute="bottom" constant="50" id="8y7-1K-S1F"/>
@@ -94,10 +106,8 @@
                 <constraint firstAttribute="bottom" secondItem="tJW-LW-93q" secondAttribute="bottom" id="RBF-Sj-vtY"/>
                 <constraint firstAttribute="bottom" secondItem="DrY-2n-Pyg" secondAttribute="bottom" constant="50" id="Rpk-X2-Adz"/>
                 <constraint firstItem="l2W-eg-yEh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hTr-Ve-brW"/>
-                <constraint firstItem="nL7-cq-cwR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jnQ-A0-Hbu"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AxE-Fj-E9T" secondAttribute="trailing" id="lcr-x6-zdZ"/>
                 <constraint firstItem="tJW-LW-93q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m5S-7E-K0o"/>
-                <constraint firstItem="nL7-cq-cwR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oeN-Oz-jD3"/>
                 <constraint firstItem="2tL-qt-RLR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="s3R-WP-jN0"/>
                 <constraint firstItem="AxE-Fj-E9T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vTP-pN-Kc9"/>
             </constraints>
@@ -105,6 +115,11 @@
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
+        <panGestureRecognizer minimumNumberOfTouches="1" id="iUD-lu-L0K">
+            <connections>
+                <action selector="didMoveOne:" destination="-1" id="taJ-Cw-NEC"/>
+            </connections>
+        </panGestureRecognizer>
     </objects>
     <resources>
         <image name="1.png" width="12" height="12"/>
