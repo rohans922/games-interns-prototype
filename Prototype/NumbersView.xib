@@ -26,67 +26,67 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edo-iS-YaG" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="135" y="0.0" width="75" height="75"/>
+                    <rect key="frame" x="142.5" y="0.0" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="75" id="3Wb-J2-nhA"/>
-                        <constraint firstAttribute="width" constant="75" id="H3s-by-4rT"/>
+                        <constraint firstAttribute="height" constant="60" id="3Wb-J2-nhA"/>
+                        <constraint firstAttribute="width" constant="60" id="H3s-by-4rT"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="m76-F0-RcF" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="220" y="50" width="75" height="75"/>
+                    <rect key="frame" x="235" y="50" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="75" id="oRf-yL-yzr"/>
-                        <constraint firstAttribute="width" constant="75" id="u43-Qa-kge"/>
+                        <constraint firstAttribute="height" constant="60" id="oRf-yL-yzr"/>
+                        <constraint firstAttribute="width" constant="60" id="u43-Qa-kge"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Myy-Eq-SKA" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="270" y="135" width="75" height="75"/>
+                    <rect key="frame" x="285" y="142.5" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="07D-jn-RRE"/>
-                        <constraint firstAttribute="height" constant="75" id="ddx-vr-6wP"/>
+                        <constraint firstAttribute="width" constant="60" id="07D-jn-RRE"/>
+                        <constraint firstAttribute="height" constant="60" id="ddx-vr-6wP"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="s8C-ts-Lnf" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="235" y="235" width="75" height="75"/>
+                    <rect key="frame" x="235" y="235" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="75" id="2YI-Rj-C6s"/>
-                        <constraint firstAttribute="width" constant="75" id="X0Q-xy-WZK"/>
+                        <constraint firstAttribute="height" constant="60" id="2YI-Rj-C6s"/>
+                        <constraint firstAttribute="width" constant="60" id="X0Q-xy-WZK"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-HP-sas" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="135" y="270" width="75" height="75"/>
+                    <rect key="frame" x="142.5" y="285" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="4Wc-ed-Xdc"/>
-                        <constraint firstAttribute="height" constant="75" id="JCu-XI-S77"/>
+                        <constraint firstAttribute="width" constant="60" id="4Wc-ed-Xdc"/>
+                        <constraint firstAttribute="height" constant="60" id="JCu-XI-S77"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1c3-EF-JDF" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="50" y="220" width="75" height="75"/>
+                    <rect key="frame" x="50" y="235" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="8FL-KV-tfR"/>
-                        <constraint firstAttribute="height" constant="75" id="RvV-uC-5a4"/>
+                        <constraint firstAttribute="width" constant="60" id="8FL-KV-tfR"/>
+                        <constraint firstAttribute="height" constant="60" id="RvV-uC-5a4"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="jzb-aZ-WRf" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="135" width="75" height="75"/>
+                    <rect key="frame" x="0.0" y="142.5" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="7Yl-h6-3gv"/>
-                        <constraint firstAttribute="height" constant="75" id="TTH-zz-9co"/>
+                        <constraint firstAttribute="width" constant="60" id="7Yl-h6-3gv"/>
+                        <constraint firstAttribute="height" constant="60" id="TTH-zz-9co"/>
                     </constraints>
                 </view>
                 <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="PRj-P2-F2Z" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="50" y="50" width="75" height="75"/>
+                    <rect key="frame" x="50" y="50" width="60" height="60"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="75" id="e9A-u5-PTC"/>
-                        <constraint firstAttribute="height" constant="75" id="iAR-8a-aLK"/>
+                        <constraint firstAttribute="width" constant="60" id="e9A-u5-PTC"/>
+                        <constraint firstAttribute="height" constant="60" id="iAR-8a-aLK"/>
                     </constraints>
                 </view>
             </subviews>
@@ -95,7 +95,7 @@
             <constraints>
                 <constraint firstItem="PRj-P2-F2Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="1SY-FG-FIE"/>
                 <constraint firstItem="PRj-P2-F2Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="3SE-eS-PSj"/>
-                <constraint firstAttribute="trailing" secondItem="s8C-ts-Lnf" secondAttribute="trailing" constant="35" id="5Kv-mU-NIi"/>
+                <constraint firstAttribute="trailing" secondItem="s8C-ts-Lnf" secondAttribute="trailing" constant="50" id="5Kv-mU-NIi"/>
                 <constraint firstItem="1c3-EF-JDF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="IOV-02-bRz"/>
                 <constraint firstItem="Myy-Eq-SKA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="JEq-jM-Po5"/>
                 <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1c3-EF-JDF" secondAttribute="bottom" constant="50" id="JLf-yY-HY3"/>
@@ -103,7 +103,7 @@
                 <constraint firstAttribute="trailing" secondItem="m76-F0-RcF" secondAttribute="trailing" constant="50" id="Mq0-vh-JYi"/>
                 <constraint firstItem="Uca-HP-sas" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OuP-UI-w48"/>
                 <constraint firstItem="m76-F0-RcF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="RbK-M2-Mic"/>
-                <constraint firstAttribute="bottom" secondItem="s8C-ts-Lnf" secondAttribute="bottom" constant="35" id="UFX-fg-PUS"/>
+                <constraint firstAttribute="bottom" secondItem="s8C-ts-Lnf" secondAttribute="bottom" constant="50" id="UFX-fg-PUS"/>
                 <constraint firstItem="Myy-Eq-SKA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V9h-PP-nQB"/>
                 <constraint firstItem="Edo-iS-YaG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Va2-Ab-l6h"/>
                 <constraint firstItem="jzb-aZ-WRf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WL9-VO-9kN"/>

@@ -34,9 +34,10 @@ class NumbersView: UIView {
         addSubview(numbersView)
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        let sequence = 0 ..< 8 // Comment out if not random order
-        let shuffledSequence = sequence.shuffled() // Use for random order
-        //let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+//        let sequence = 0 ..< 8 // Comment out if not random order
+//        let shuffledSequence = sequence.shuffled() // Use for random order
+//        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
             element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
@@ -96,12 +97,13 @@ class NumbersView: UIView {
         if let view = recognizer.view as? ElementView {
             view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
             let swapIndices = view.getSwapIndices()
-            if view.frame.intersects(elementViews[swapIndices[0]].frame) {
+            let hitbox = view.frame.insetBy(dx: 25, dy: 10)
+            if hitbox.intersects(elementViews[swapIndices[0]].frame) {
                 recognizer.state = .ended
                 let swap = view.getImageName()
                 view.setImageName(image: elementViews[swapIndices[0]].getImageName())
                 elementViews[swapIndices[0]].setImageName(image: swap)
-            } else if view.frame.intersects(elementViews[swapIndices[1]].frame) {
+            } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
                 recognizer.state = .ended
                 let swap = view.getImageName()
                 view.setImageName(image: elementViews[swapIndices[1]].getImageName())
@@ -127,11 +129,11 @@ class NumbersView: UIView {
             delegate?.hideLines()
             var counter = 0
             for (index, element) in elementViews.enumerated() {
-                if(element.getImageName() == String(index+1) + "_chick"){
+                if (element.getImageName() == String(index + 1) + "_chick") {
                     counter += 1
                 }
             }
-            if (counter == 8){
+            if (counter == 8) {
                 delegate?.whenFinished()
             }
             UIView.animate(withDuration:0.3, animations: {

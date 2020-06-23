@@ -43,7 +43,9 @@ class ClockView: UIView {
     }
     
     func hideLines() {
-        self.linesImageView.alpha = 0.0
+        UIView.animate(withDuration:0.3, animations: {
+            self.linesImageView.alpha = 0.0
+        })
     }
     
     // Add function to rotate hands

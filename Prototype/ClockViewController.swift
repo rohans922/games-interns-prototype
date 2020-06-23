@@ -22,7 +22,9 @@ class ClockViewController: UIViewController {
 
 extension ClockViewController: NumbersViewDelegate {
     func whenFinished() {
-        youWin.isHidden=false
+        UIView.animate(withDuration:0.3, animations: {
+            self.youWin.alpha = 1.0
+        })
     }
     func showLinesForNumber(number: String) {
         clockView.showLines(number)

@@ -14,6 +14,7 @@
 		1C156D53249BF66E00BE2F95 /* ClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D52249BF66E00BE2F95 /* ClockView.xib */; };
 		1C156D55249BF68100BE2F95 /* ClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C156D54249BF68100BE2F95 /* ClockView.swift */; };
 		1C156D7A249C0A8F00BE2F95 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */; };
+		1C27EBC224A2C26A004CD143 /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C27EBC124A2C26A004CD143 /* arrow.png */; };
 		1C82E27524A25789001B5F7F /* ElementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1C82E27424A25789001B5F7F /* ElementView.swift */; };
 		1C82E27724A25797001B5F7F /* ElementView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 1C82E27624A25797001B5F7F /* ElementView.xib */; };
 		1C82E28124A289EA001B5F7F /* lines-6.png in Resources */ = {isa = PBXBuildFile; fileRef = 1C82E27924A289E8001B5F7F /* lines-6.png */; };
@@ -33,8 +34,8 @@
 		DB21AE2124A2ACD400BAB1DD /* 5_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1924A2ACD300BAB1DD /* 5_chick.png */; };
 		DB21AE2224A2ACD400BAB1DD /* 1_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1A24A2ACD300BAB1DD /* 1_chick.png */; };
 		DB21AE2324A2ACD400BAB1DD /* 6_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1B24A2ACD300BAB1DD /* 6_chick.png */; };
-		DB21AE2424A2ACD400BAB1DD /* 8_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1C24A2ACD300BAB1DD /* 8_chick.png */; };
-		DB21AE2524A2ACD400BAB1DD /* 7_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1D24A2ACD300BAB1DD /* 7_chick.png */; };
+		DB21AE2424A2ACD400BAB1DD /* 7_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1C24A2ACD300BAB1DD /* 7_chick.png */; };
+		DB21AE2524A2ACD400BAB1DD /* 8_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1D24A2ACD300BAB1DD /* 8_chick.png */; };
 		DB21AE2624A2ACD400BAB1DD /* 3_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1E24A2ACD400BAB1DD /* 3_chick.png */; };
 		DB21AE2724A2ACD400BAB1DD /* 4_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1F24A2ACD400BAB1DD /* 4_chick.png */; };
 /* End PBXBuildFile section */
@@ -64,6 +65,7 @@
 		1C156D52249BF66E00BE2F95 /* ClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ClockView.xib; sourceTree = "<group>"; };
 		1C156D54249BF68100BE2F95 /* ClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ClockView.swift; sourceTree = "<group>"; };
 		1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
+		1C27EBC124A2C26A004CD143 /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
 		1C82E27424A25789001B5F7F /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		1C82E27624A25797001B5F7F /* ElementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementView.xib; sourceTree = "<group>"; };
 		1C82E27924A289E8001B5F7F /* lines-6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "lines-6.png"; sourceTree = "<group>"; };
@@ -89,8 +91,8 @@
 		DB21AE1924A2ACD300BAB1DD /* 5_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 5_chick.png; sourceTree = "<group>"; };
 		DB21AE1A24A2ACD300BAB1DD /* 1_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 1_chick.png; sourceTree = "<group>"; };
 		DB21AE1B24A2ACD300BAB1DD /* 6_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 6_chick.png; sourceTree = "<group>"; };
-		DB21AE1C24A2ACD300BAB1DD /* 8_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8_chick.png; sourceTree = "<group>"; };
-		DB21AE1D24A2ACD300BAB1DD /* 7_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_chick.png; sourceTree = "<group>"; };
+		DB21AE1C24A2ACD300BAB1DD /* 7_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 7_chick.png; sourceTree = "<group>"; };
+		DB21AE1D24A2ACD300BAB1DD /* 8_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8_chick.png; sourceTree = "<group>"; };
 		DB21AE1E24A2ACD400BAB1DD /* 3_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_chick.png; sourceTree = "<group>"; };
 		DB21AE1F24A2ACD400BAB1DD /* 4_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_chick.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 		1C156D62249C04B200BE2F95 /* Clock Elements */ = {
 			isa = PBXGroup;
 			children = (
+				1C27EBC124A2C26A004CD143 /* arrow.png */,
 				DB21AE1724A2ABFF00BAB1DD /* Symbols */,
 				1C82E27824A289C7001B5F7F /* Lines */,
 			);
@@ -228,8 +231,8 @@
 				DB21AE1F24A2ACD400BAB1DD /* 4_chick.png */,
 				DB21AE1924A2ACD300BAB1DD /* 5_chick.png */,
 				DB21AE1B24A2ACD300BAB1DD /* 6_chick.png */,
-				DB21AE1D24A2ACD300BAB1DD /* 7_chick.png */,
-				DB21AE1C24A2ACD300BAB1DD /* 8_chick.png */,
+				DB21AE1C24A2ACD300BAB1DD /* 7_chick.png */,
+				DB21AE1D24A2ACD300BAB1DD /* 8_chick.png */,
 			);
 			path = Symbols;
 			sourceTree = "<group>";
@@ -339,6 +342,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				1C156D7A249C0A8F00BE2F95 /* LaunchScreen.storyboard in Resources */,
+				1C27EBC224A2C26A004CD143 /* arrow.png in Resources */,
 				1C82E28624A289EA001B5F7F /* lines-5.png in Resources */,
 				1C82E28724A289EA001B5F7F /* lines-3.png in Resources */,
 				1C82E27724A25797001B5F7F /* ElementView.xib in Resources */,
@@ -357,8 +361,8 @@
 				1C82E28124A289EA001B5F7F /* lines-6.png in Resources */,
 				DB21AE2724A2ACD400BAB1DD /* 4_chick.png in Resources */,
 				1C156D51249BEE3700BE2F95 /* NumbersView.xib in Resources */,
-				DB21AE2424A2ACD400BAB1DD /* 8_chick.png in Resources */,
-				DB21AE2524A2ACD400BAB1DD /* 7_chick.png in Resources */,
+				DB21AE2424A2ACD400BAB1DD /* 7_chick.png in Resources */,
+				DB21AE2524A2ACD400BAB1DD /* 8_chick.png in Resources */,
 				DB21AE2324A2ACD400BAB1DD /* 6_chick.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
