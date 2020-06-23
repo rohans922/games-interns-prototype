@@ -11,6 +11,7 @@ class ClockViewController: UIViewController {
 
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var numbersView: NumbersView!
+    @IBOutlet weak var youWin: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,6 +21,9 @@ class ClockViewController: UIViewController {
 }
 
 extension ClockViewController: NumbersViewDelegate {
+    func whenFinished() {
+        youWin.isHidden=false
+    }
     func showLinesForNumber(number: String) {
         clockView.showLines(number)
     }

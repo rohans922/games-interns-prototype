@@ -12,6 +12,7 @@
                 <outlet property="clockView" destination="p6W-Lz-gWO" id="lVL-RM-XvB"/>
                 <outlet property="numbersView" destination="ruU-37-V1l" id="Ohe-ZX-Qug"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+                <outlet property="youWin" destination="9fX-6A-BSH" id="QK0-4b-xNv"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,6 +20,12 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You Win!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9fX-6A-BSH">
+                    <rect key="frame" x="173" y="54" width="68" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="p6W-Lz-gWO" customClass="ClockView" customModule="Prototype" customModuleProvider="target">
                     <rect key="frame" x="2" y="243" width="410" height="410"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -28,19 +35,21 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ruU-37-V1l" customClass="NumbersView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="17" y="258" width="380" height="380"/>
+                    <rect key="frame" x="34.5" y="275.5" width="345" height="345"/>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="380" id="KT2-Ke-eBF"/>
-                        <constraint firstAttribute="width" constant="380" id="w4K-bG-HEA"/>
+                        <constraint firstAttribute="height" constant="345" id="KT2-Ke-eBF"/>
+                        <constraint firstAttribute="width" constant="345" id="w4K-bG-HEA"/>
                     </constraints>
                 </view>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
+                <constraint firstItem="9fX-6A-BSH" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="10" id="6el-Zw-3no"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="71j-Q0-vnF"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8im-FZ-2v3"/>
                 <constraint firstItem="ruU-37-V1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ol8-3j-hBE"/>
+                <constraint firstItem="9fX-6A-BSH" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="p4l-b2-Hdi"/>
                 <constraint firstItem="ruU-37-V1l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="szF-f8-6Ug"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
