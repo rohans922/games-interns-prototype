@@ -9,6 +9,8 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockViewController" customModule="Prototype" customModuleProvider="target">
             <connections>
+                <outlet property="clockView" destination="p6W-Lz-gWO" id="lVL-RM-XvB"/>
+                <outlet property="numbersView" destination="ruU-37-V1l" id="Ohe-ZX-Qug"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -33,40 +35,11 @@
                         <constraint firstAttribute="width" constant="380" id="w4K-bG-HEA"/>
                     </constraints>
                 </view>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Nfy-r3-JTZ">
-                    <rect key="frame" x="239" y="707" width="130" height="130"/>
-                    <constraints>
-                        <constraint firstAttribute="width" constant="130" id="1HT-7x-QT4"/>
-                        <constraint firstAttribute="height" constant="130" id="eHV-OY-cIi"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                    <state key="normal" title="NEXT"/>
-                    <connections>
-                        <action selector="onNextButton:" destination="-1" eventType="touchUpInside" id="xqt-aG-7RT"/>
-                    </connections>
-                </button>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D63-uY-QDy">
-                    <rect key="frame" x="45" y="707" width="130" height="130"/>
-                    <constraints>
-                        <constraint firstAttribute="height" constant="130" id="FTe-zx-PG4"/>
-                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="130" id="JSL-yK-0zF"/>
-                        <constraint firstAttribute="width" constant="130" id="kZL-zq-gk3"/>
-                    </constraints>
-                    <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                    <state key="normal" title="SWAP"/>
-                    <connections>
-                        <action selector="onSwapButton:" destination="-1" eventType="touchUpInside" id="qbi-c5-8Xu"/>
-                    </connections>
-                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="71j-Q0-vnF"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="D63-uY-QDy" secondAttribute="bottom" constant="25" id="8AI-2J-eAF"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8im-FZ-2v3"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="Nfy-r3-JTZ" secondAttribute="bottom" constant="25" id="GrV-cM-akK"/>
-                <constraint firstItem="D63-uY-QDy" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="45" id="N7U-OV-bQs"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="Nfy-r3-JTZ" secondAttribute="trailing" constant="45" id="gQm-Dx-O4N"/>
                 <constraint firstItem="ruU-37-V1l" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="ol8-3j-hBE"/>
                 <constraint firstItem="ruU-37-V1l" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="szF-f8-6Ug"/>
             </constraints>

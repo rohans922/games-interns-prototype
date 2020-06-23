@@ -10,9 +10,7 @@ import UIKit
 class ClockView: UIView {
     
     @IBOutlet var clockView: UIView!
-    @IBOutlet weak var hourHand: UIImageView!
-    @IBOutlet weak var minuteHand: UIImageView!
-    private let oneStepRadians: CGFloat = 0.785398 // 45 degrees in radians
+    @IBOutlet weak var linesImageView: UIImageView!
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +33,17 @@ class ClockView: UIView {
         self.layer.borderColor = UIColor.black.cgColor
         self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
+    }
+    
+    func showLines(_ number: String) {
+        linesImageView.image = UIImage(named: ("lines-" + number))
+        UIView.animate(withDuration:0.3, animations: {
+            self.linesImageView.alpha = 1.0
+        })
+    }
+    
+    func hideLines() {
+        self.linesImageView.alpha = 0.0
     }
     
     // Add function to rotate hands

@@ -9,20 +9,21 @@ import UIKit
 
 class ClockViewController: UIViewController {
 
+    @IBOutlet weak var clockView: ClockView!
+    @IBOutlet weak var numbersView: NumbersView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        numbersView.setDelegate(del: self)
+        self.view.backgroundColor = UIColor(red: 0.99, green: 0.47, blue: 0.33, alpha: 1.00)
     }
-    
-    @IBAction func onNextButton(_ sender: Any) {
-        nextTurn();
-    }
+}
 
-    @IBAction func onSwapButton(_ sender: Any) {
-        print("Swapping Values")
-        nextTurn();
+extension ClockViewController: NumbersViewDelegate {
+    func showLinesForNumber(number: String) {
+        clockView.showLines(number)
     }
-    
-    private func nextTurn() {
-        print("Next Turn")
+    func hideLines() {
+        clockView.hideLines()
     }
 }
