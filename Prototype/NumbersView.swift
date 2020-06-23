@@ -10,6 +10,7 @@ import UIKit
 protocol NumbersViewDelegate {
     func showLinesForNumber(number: String)
     func hideLines()
+    func whenFinished()
 }
 
 class NumbersView: UIView {
@@ -33,9 +34,12 @@ class NumbersView: UIView {
         addSubview(numbersView)
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
+        let sequence = 0 ..< 8 // Comment out if not random order
+        let shuffledSequence = sequence.shuffled() // Use for random order
+        //let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
-            element.setImageName(image: String(index + 1))
+            element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
             element.setLocation(point: element.center)
             element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
         }
@@ -121,6 +125,15 @@ class NumbersView: UIView {
         }
         if recognizer.state == .ended {
             delegate?.hideLines()
+            var counter = 0
+            for (index, element) in elementViews.enumerated() {
+                if(element.getImageName() == String(index+1) + "_chick"){
+                    counter += 1
+                }
+            }
+            if (counter == 8){
+                delegate?.whenFinished()
+            }
             UIView.animate(withDuration:0.3, animations: {
                 for a in self.elementViews {
                     a.alpha = 1
