@@ -11,6 +11,7 @@ protocol NumbersViewDelegate {
     func showLinesForNumber(number: String)
     func hideLines()
     func whenFinished()
+    func animateSequence(elementViews: [ElementView])
 }
 
 class NumbersView: UIView {
@@ -56,11 +57,11 @@ class NumbersView: UIView {
     
     func setupProject() {
         gameOver = false
-    //        let sequence = 0 ..< 8 // Comment out if not random order
-//            let shuffledSequence = sequence.shuffled() // Use for random order
-
+            let sequence = 0 ..< 8 // Comment out if not random order
+            let shuffledSequence = sequence.shuffled() // Use for random order
         
-        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+//        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+//        let shuffledSequence = [0, 4, 2, 3, 1, 5, 6, 7] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
@@ -135,9 +136,10 @@ class NumbersView: UIView {
         }
     }
     
-    func delay(_ delay:Double, closure:@escaping ()->()) {
-        DispatchQueue.main.asyncAfter(
-            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
+    func startAnimation() {
+        if (!gameOver!) {
+            delegate?.animateSequence(elementViews: elementViews)
+        }
     }
     
     private func handlePan(_ recognizer: UIPanGestureRecognizer) {
@@ -151,11 +153,19 @@ class NumbersView: UIView {
                 let swap = view.getImageName()
                 view.setImageName(image: elementViews[swapIndices[0]].getImageName())
                 elementViews[swapIndices[0]].setImageName(image: swap)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    self.startAnimation()
+                }
             } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
                 recognizer.state = .ended
                 let swap = view.getImageName()
                 view.setImageName(image: elementViews[swapIndices[1]].getImageName())
                 elementViews[swapIndices[1]].setImageName(image: swap)
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                    if (!self.gameOver!) {
+                        self.delegate?.animateSequence(elementViews: self.elementViews)
+                    }
+                }
             }
         }
         recognizer.setTranslation(CGPoint.zero, in: self.numbersView)
@@ -183,31 +193,19 @@ class NumbersView: UIView {
             }
             if (counter == 8) {
                 gameOver = true
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
-                    UIView.animate(withDuration:1.0, animations: {
+                numbersView.bringSubviewToFront(elementViews[0])
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    UIView.animate(withDuration:0.6, delay: 0, options: .curveEaseOut, animations: {
                         for a in self.elementViews {
-                            a.center = CGPoint(x: self.numbersView.center.x, y: self.numbersView.center.y)
-                            a.transform = CGAffineTransform(scaleX: 2, y: 2)
+                            a.center = CGPoint(x: self.numbersView.center.x, y: self.numbersView.center.y - 130)
                         }
                     })
-                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                        DispatchQueue.global(qos: .default).async {
-                            while(self.gameOver!) {
-                                for (index, element) in self.elementViews.enumerated() {
-                                     DispatchQueue.main.async {
-                                        for (index2, element2) in self.elementViews.enumerated() {
-                                            if index2 != index {
-                                                element2.alpha = 0
-                                            }
-                                        }
-                                        element.alpha = 1
-                                     }
-
-                                    usleep(80000)
-                                }
-                            }
+                    UIView.animate(withDuration:0.2, delay: 0,options: .curveEaseOut, animations: {
+                        for a in self.elementViews {
+                            a.transform = CGAffineTransform(scaleX: 2, y: 2)
                         }
-                    }
+                        
+                    })
                 }
                 delegate?.whenFinished()
             }
