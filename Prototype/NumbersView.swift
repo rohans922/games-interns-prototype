@@ -64,8 +64,8 @@ class NumbersView: UIView {
     
     func setFrame() {
         numbersView.frame = self.bounds
-        for (index, element) in elementViews.enumerated() {
-            element.setLocation(point: element.center)
+        for e in elementViews {
+            e.setLocation(point: e.center)
         }
     }
     
