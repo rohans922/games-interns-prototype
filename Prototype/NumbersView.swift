@@ -34,14 +34,13 @@ class NumbersView: UIView {
         addSubview(numbersView)
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        let sequence = 0 ..< 8 // Comment out if not random order
-//        let shuffledSequence = sequence.shuffled() // Use for random order
+        let sequence = 0 ..< 8 // Comment out if not random order
+        let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
+//        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
             element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
-            element.setLocation(point: element.center)
             element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
         }
         
@@ -61,6 +60,13 @@ class NumbersView: UIView {
         elementViews[6].addGestureRecognizer(sevenGR)
         let eightGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleEight(recognizer:)))
         elementViews[7].addGestureRecognizer(eightGR)
+    }
+    
+    func setFrame() {
+        numbersView.frame = self.bounds
+        for (index, element) in elementViews.enumerated() {
+            element.setLocation(point: element.center)
+        }
     }
     
     func setDelegate(del: NumbersViewDelegate) {

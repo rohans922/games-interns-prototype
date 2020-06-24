@@ -17,6 +17,12 @@ class ClockViewController: UIViewController {
         super.viewDidLoad()
         numbersView.setDelegate(del: self)
         self.view.backgroundColor = UIColor(red: 0.99, green: 0.47, blue: 0.33, alpha: 1.00)
+        
+    }
+    override func viewDidLayoutSubviews() {
+        super.viewDidLayoutSubviews()
+        clockView.setRadius()
+        numbersView.setFrame()
     }
 }
 

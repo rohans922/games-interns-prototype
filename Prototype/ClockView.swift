@@ -28,11 +28,14 @@ class ClockView: UIView {
         clockView.frame = self.bounds
         clockView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         // Creates the border for the clock:
-        self.layer.borderWidth = 3
         self.layer.masksToBounds = false
         self.layer.borderColor = UIColor.black.cgColor
-        self.layer.cornerRadius = self.frame.height / 2
         self.clipsToBounds = true
+    }
+    
+    func setRadius() {
+        self.layer.cornerRadius = clockView.frame.height / 2
+        clockView.frame = self.bounds
     }
     
     func showLines(_ number: String) {
