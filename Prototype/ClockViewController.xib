@@ -11,6 +11,7 @@
             <connections>
                 <outlet property="clockView" destination="p6W-Lz-gWO" id="lVL-RM-XvB"/>
                 <outlet property="numbersView" destination="ruU-37-V1l" id="Ohe-ZX-Qug"/>
+                <outlet property="restartButton" destination="9D4-Ri-qCO" id="PWs-8H-zfR"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="youWin" destination="9fX-6A-BSH" id="QK0-4b-xNv"/>
             </connections>
@@ -44,14 +45,26 @@
                     <nil key="textColor"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" alpha="0.0" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9D4-Ri-qCO">
+                    <rect key="frame" x="139.5" y="728" width="135" height="48"/>
+                    <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="30"/>
+                    <state key="normal" title="RESTART">
+                        <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
+                    </state>
+                    <connections>
+                        <action selector="onRestart:" destination="-1" eventType="touchUpInside" id="d3M-p0-Fhj"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="2" id="3fi-gd-Qjb"/>
+                <constraint firstItem="9D4-Ri-qCO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="54t-nW-8EW"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="71j-Q0-vnF"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="8im-FZ-2v3"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="top" secondItem="9fX-6A-BSH" secondAttribute="bottom" constant="37" id="GVB-cy-XMY"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="top" secondItem="Gbb-gA-2zI" secondAttribute="bottom" constant="4" id="GY5-pc-tnW"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="9D4-Ri-qCO" secondAttribute="bottom" constant="86" id="JDK-ux-LB1"/>
                 <constraint firstItem="ruU-37-V1l" firstAttribute="top" secondItem="p6W-Lz-gWO" secondAttribute="top" constant="32.5" id="JbP-oF-AdE"/>
                 <constraint firstItem="p6W-Lz-gWO" firstAttribute="bottom" secondItem="ruU-37-V1l" secondAttribute="bottom" constant="32.5" id="JzE-I9-CrO"/>
                 <constraint firstItem="Gbb-gA-2zI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ain-Ms-rmy"/>

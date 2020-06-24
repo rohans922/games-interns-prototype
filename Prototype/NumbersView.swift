@@ -31,21 +31,11 @@ class NumbersView: UIView {
     }
     
     private func commonInit() {
-        gameOver = false
         Bundle.main.loadNibNamed("NumbersView", owner: self, options: nil)
         addSubview(numbersView)
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-//        let sequence = 0 ..< 8 // Comment out if not random order
-//        let shuffledSequence = sequence.shuffled() // Use for random order
-//        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
-        for (index, element) in elementViews.enumerated() {
-            element.setIndex(i: index)
-            element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
-            element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
-        }
-        
+        setupProject()
         let oneGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleOne(recognizer:)))
         elementViews[0].addGestureRecognizer(oneGR)
         let twoGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleTwo(recognizer:)))
@@ -62,6 +52,35 @@ class NumbersView: UIView {
         elementViews[6].addGestureRecognizer(sevenGR)
         let eightGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleEight(recognizer:)))
         elementViews[7].addGestureRecognizer(eightGR)
+    }
+    
+    func setupProject() {
+        gameOver = false
+    //        let sequence = 0 ..< 8 // Comment out if not random order
+//            let shuffledSequence = sequence.shuffled() // Use for random order
+
+        
+        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+//        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
+        for (index, element) in elementViews.enumerated() {
+            element.setIndex(i: index)
+            element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
+            element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
+        }
+    }
+    
+    func restart () {
+        gameOver = false
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+            UIView.animate(withDuration:0.5, animations: {
+                for a in self.elementViews {
+                    a.center = a.getLocation()
+                    a.alpha = 1
+                    a.transform = .identity
+                }
+            })
+            self.setupProject()
+        }
     }
     
     func setFrame() {
@@ -173,19 +192,18 @@ class NumbersView: UIView {
                     })
                     DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
                         DispatchQueue.global(qos: .default).async {
-                            while(true) {
+                            while(self.gameOver!) {
                                 for (index, element) in self.elementViews.enumerated() {
                                      DispatchQueue.main.async {
                                         for (index2, element2) in self.elementViews.enumerated() {
                                             if index2 != index {
-                                                element2.isHidden = true
+                                                element2.alpha = 0
                                             }
                                         }
-                                        element.isHidden = false
+                                        element.alpha = 1
                                      }
 
                                     usleep(80000)
-
                                 }
                             }
                         }
