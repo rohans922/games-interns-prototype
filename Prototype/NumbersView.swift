@@ -16,6 +16,7 @@ protocol NumbersViewDelegate {
 class NumbersView: UIView {
     
     private var delegate: NumbersViewDelegate?
+    private var gameOver: Bool?
     @IBOutlet var numbersView: UIView!
     @IBOutlet var elementViews: [ElementView]!
     
@@ -30,14 +31,15 @@ class NumbersView: UIView {
     }
     
     private func commonInit() {
+        gameOver = false
         Bundle.main.loadNibNamed("NumbersView", owner: self, options: nil)
         addSubview(numbersView)
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
-        let sequence = 0 ..< 8 // Comment out if not random order
-        let shuffledSequence = sequence.shuffled() // Use for random order
+//        let sequence = 0 ..< 8 // Comment out if not random order
+//        let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-//        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
+        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
             element.setImageName(image: String(shuffledSequence[index] + 1) + "_chick" )
@@ -74,28 +76,49 @@ class NumbersView: UIView {
     }
     
     @objc func handleOne(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleTwo(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleThree(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleFour(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleFive(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleSix(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleSeven(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
     }
     @objc func handleEight(recognizer: UIPanGestureRecognizer) {
-        handlePan(recognizer)
+        if (!gameOver!) {
+            handlePan(recognizer)
+        }
+    }
+    
+    func delay(_ delay:Double, closure:@escaping ()->()) {
+        DispatchQueue.main.asyncAfter(
+            deadline: DispatchTime.now() + Double(Int64(delay * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC), execute: closure)
     }
     
     private func handlePan(_ recognizer: UIPanGestureRecognizer) {
@@ -140,6 +163,34 @@ class NumbersView: UIView {
                 }
             }
             if (counter == 8) {
+                gameOver = true
+                DispatchQueue.main.asyncAfter(deadline: .now() + 0.5) {
+                    UIView.animate(withDuration:1.0, animations: {
+                        for a in self.elementViews {
+                            a.center = CGPoint(x: self.numbersView.center.x, y: self.numbersView.center.y)
+                            a.transform = CGAffineTransform(scaleX: 2, y: 2)
+                        }
+                    })
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                        DispatchQueue.global(qos: .default).async {
+                            while(true) {
+                                for (index, element) in self.elementViews.enumerated() {
+                                     DispatchQueue.main.async {
+                                        for (index2, element2) in self.elementViews.enumerated() {
+                                            if index2 != index {
+                                                element2.isHidden = true
+                                            }
+                                        }
+                                        element.isHidden = false
+                                     }
+
+                                    usleep(80000)
+
+                                }
+                            }
+                        }
+                    }
+                }
                 delegate?.whenFinished()
             }
             UIView.animate(withDuration:0.3, animations: {
