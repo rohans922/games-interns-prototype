@@ -69,7 +69,7 @@ extension ClockViewController: NumbersViewDelegate {
             }
             self.finalAnimationView.image = animationImages[0]
             self.finalAnimationView.animationImages = animationImages
-            self.finalAnimationView.animationDuration = 0.8
+            self.finalAnimationView.animationDuration = 1.6
             self.finalAnimationView.animationRepeatCount = 1000
             
             UIView.animate(withDuration:0.3, animations: {
@@ -109,7 +109,7 @@ extension ClockViewController: NumbersViewDelegate {
             }
             animationImage.image = animationImages[0]
             animationImage.animationImages = animationImages
-            animationImage.animationDuration = 0.8
+            animationImage.animationDuration = 2.5
             animationImage.animationRepeatCount = 1000
     //        make value 1 if just one loop is desired
             
