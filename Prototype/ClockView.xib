@@ -10,8 +10,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ClockView" customModule="Prototype" customModuleProvider="target">
             <connections>
                 <outlet property="clockView" destination="iN0-l3-epB" id="fZe-AQ-RPH"/>
-                <outlet property="hourHand" destination="C5U-2o-LcP" id="Ahe-o3-oKM"/>
-                <outlet property="minuteHand" destination="vJp-f9-ent" id="ql0-hL-PbZ"/>
+                <outlet property="linesImageView" destination="AOe-Nf-WJc" id="e8Z-V8-zNE"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
@@ -19,35 +18,22 @@
             <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="minute.png" translatesAutoresizingMaskIntoConstraints="NO" id="vJp-f9-ent">
-                    <rect key="frame" x="158.5" y="15" width="33" height="320"/>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="AOe-Nf-WJc">
+                    <rect key="frame" x="50" y="50" width="250" height="250"/>
                     <constraints>
-                        <constraint firstAttribute="width" secondItem="vJp-f9-ent" secondAttribute="height" multiplier="33:320" id="RwK-ag-L8a"/>
-                        <constraint firstAttribute="width" constant="33" id="gXC-4v-LyL"/>
-                    </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="hour.png" translatesAutoresizingMaskIntoConstraints="NO" id="C5U-2o-LcP">
-                    <rect key="frame" x="158.5" y="15" width="33" height="320"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="C5U-2o-LcP" secondAttribute="height" multiplier="33:320" id="sc7-9e-jOu"/>
-                        <constraint firstAttribute="width" constant="33" id="tgO-41-VBq"/>
+                        <constraint firstAttribute="width" constant="250" id="Pp0-1k-v5X"/>
+                        <constraint firstAttribute="height" constant="250" id="uAJ-28-aO0"/>
                     </constraints>
                 </imageView>
             </subviews>
-            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="C5U-2o-LcP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="0Ua-lH-NYg"/>
-                <constraint firstItem="C5U-2o-LcP" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="NxX-bf-cZC"/>
-                <constraint firstItem="vJp-f9-ent" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="UgF-Sc-olJ"/>
-                <constraint firstItem="vJp-f9-ent" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="zE7-tL-E6z"/>
+                <constraint firstItem="AOe-Nf-WJc" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="Y4P-oR-IfK"/>
+                <constraint firstItem="AOe-Nf-WJc" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ZEu-A9-LaG"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="127.90178571428571"/>
         </view>
     </objects>
-    <resources>
-        <image name="hour.png" width="7.9200000762939453" height="84"/>
-        <image name="minute.png" width="7.9200000762939453" height="84"/>
-    </resources>
 </document>

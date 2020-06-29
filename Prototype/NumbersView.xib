@@ -10,110 +10,109 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NumbersView" customModule="Prototype" customModuleProvider="target">
             <connections>
                 <outlet property="numbersView" destination="iN0-l3-epB" id="lEB-Aa-gmV"/>
-                <outletCollection property="numbers" destination="nL7-cq-cwR" collectionClass="NSMutableArray" id="JB9-dD-uVX"/>
-                <outletCollection property="numbers" destination="jvr-Cg-SA2" collectionClass="NSMutableArray" id="buF-Rc-fRT"/>
-                <outletCollection property="numbers" destination="AxE-Fj-E9T" collectionClass="NSMutableArray" id="ULL-Kb-JMD"/>
-                <outletCollection property="numbers" destination="1gG-Lz-w31" collectionClass="NSMutableArray" id="KLs-7g-4Ht"/>
-                <outletCollection property="numbers" destination="tJW-LW-93q" collectionClass="NSMutableArray" id="GiZ-XU-iDZ"/>
-                <outletCollection property="numbers" destination="DrY-2n-Pyg" collectionClass="NSMutableArray" id="GIv-nC-QcX"/>
-                <outletCollection property="numbers" destination="l2W-eg-yEh" collectionClass="NSMutableArray" id="sD5-uR-HyL"/>
-                <outletCollection property="numbers" destination="2tL-qt-RLR" collectionClass="NSMutableArray" id="qlq-e6-WId"/>
+                <outletCollection property="elementViews" destination="Edo-iS-YaG" collectionClass="NSMutableArray" id="jez-P1-rAv"/>
+                <outletCollection property="elementViews" destination="m76-F0-RcF" collectionClass="NSMutableArray" id="UTb-FV-mhe"/>
+                <outletCollection property="elementViews" destination="Myy-Eq-SKA" collectionClass="NSMutableArray" id="Onb-J0-Tme"/>
+                <outletCollection property="elementViews" destination="s8C-ts-Lnf" collectionClass="NSMutableArray" id="uAW-Y0-Tpa"/>
+                <outletCollection property="elementViews" destination="Uca-HP-sas" collectionClass="NSMutableArray" id="yfc-IC-AZ8"/>
+                <outletCollection property="elementViews" destination="1c3-EF-JDF" collectionClass="NSMutableArray" id="Md0-Xz-CXL"/>
+                <outletCollection property="elementViews" destination="jzb-aZ-WRf" collectionClass="NSMutableArray" id="aqm-2B-438"/>
+                <outletCollection property="elementViews" destination="PRj-P2-F2Z" collectionClass="NSMutableArray" id="62n-dW-edD"/>
             </connections>
         </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <view contentMode="scaleToFill" id="iN0-l3-epB">
-            <rect key="frame" x="0.0" y="0.0" width="350" height="350"/>
+            <rect key="frame" x="0.0" y="0.0" width="345" height="345"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1.png" translatesAutoresizingMaskIntoConstraints="NO" id="nL7-cq-cwR">
-                    <rect key="frame" x="162.5" y="0.0" width="25" height="25"/>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Edo-iS-YaG" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="142.5" y="0.0" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="2cC-BL-3ml"/>
-                        <constraint firstAttribute="width" constant="25" id="g5U-7T-V9S"/>
+                        <constraint firstAttribute="height" constant="60" id="3Wb-J2-nhA"/>
+                        <constraint firstAttribute="width" constant="60" id="H3s-by-4rT"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="5.png" translatesAutoresizingMaskIntoConstraints="NO" id="tJW-LW-93q">
-                    <rect key="frame" x="162.5" y="325" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="m76-F0-RcF" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="235" y="50" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="Fzu-Ck-Pxk"/>
-                        <constraint firstAttribute="width" constant="25" id="Q3G-Qc-F1S"/>
+                        <constraint firstAttribute="height" constant="60" id="oRf-yL-yzr"/>
+                        <constraint firstAttribute="width" constant="60" id="u43-Qa-kge"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="3.png" translatesAutoresizingMaskIntoConstraints="NO" id="AxE-Fj-E9T">
-                    <rect key="frame" x="325" y="162.5" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Myy-Eq-SKA" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="285" y="142.5" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="afX-gI-7EX"/>
-                        <constraint firstAttribute="height" constant="25" id="xvC-Tz-hrP"/>
+                        <constraint firstAttribute="width" constant="60" id="07D-jn-RRE"/>
+                        <constraint firstAttribute="height" constant="60" id="ddx-vr-6wP"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="7.png" translatesAutoresizingMaskIntoConstraints="NO" id="l2W-eg-yEh">
-                    <rect key="frame" x="0.0" y="162.5" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="s8C-ts-Lnf" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="235" y="235" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="c6c-6Z-QCt"/>
-                        <constraint firstAttribute="width" constant="25" id="xoK-tE-i2C"/>
+                        <constraint firstAttribute="height" constant="60" id="2YI-Rj-C6s"/>
+                        <constraint firstAttribute="width" constant="60" id="X0Q-xy-WZK"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="8.png" translatesAutoresizingMaskIntoConstraints="NO" id="2tL-qt-RLR">
-                    <rect key="frame" x="50" y="50" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="Uca-HP-sas" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="142.5" y="285" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="Zej-Xz-ehD"/>
-                        <constraint firstAttribute="width" constant="25" id="aW7-gb-hpl"/>
+                        <constraint firstAttribute="width" constant="60" id="4Wc-ed-Xdc"/>
+                        <constraint firstAttribute="height" constant="60" id="JCu-XI-S77"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2.png" translatesAutoresizingMaskIntoConstraints="NO" id="jvr-Cg-SA2">
-                    <rect key="frame" x="275" y="50" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="1c3-EF-JDF" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="50" y="235" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="BE1-7s-swM"/>
-                        <constraint firstAttribute="height" constant="25" id="hWe-EL-b6E"/>
+                        <constraint firstAttribute="width" constant="60" id="8FL-KV-tfR"/>
+                        <constraint firstAttribute="height" constant="60" id="RvV-uC-5a4"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="4.png" translatesAutoresizingMaskIntoConstraints="NO" id="1gG-Lz-w31">
-                    <rect key="frame" x="275" y="275" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="jzb-aZ-WRf" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="142.5" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="width" constant="25" id="ARx-TJ-AE8"/>
-                        <constraint firstAttribute="height" constant="25" id="CzN-gX-bLl"/>
+                        <constraint firstAttribute="width" constant="60" id="7Yl-h6-3gv"/>
+                        <constraint firstAttribute="height" constant="60" id="TTH-zz-9co"/>
                     </constraints>
-                </imageView>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="6.png" translatesAutoresizingMaskIntoConstraints="NO" id="DrY-2n-Pyg">
-                    <rect key="frame" x="50" y="275" width="25" height="25"/>
+                </view>
+                <view contentMode="center" translatesAutoresizingMaskIntoConstraints="NO" id="PRj-P2-F2Z" customClass="ElementView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="50" y="50" width="60" height="60"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="25" id="CdM-C6-guf"/>
-                        <constraint firstAttribute="width" constant="25" id="dN7-8x-E4g"/>
+                        <constraint firstAttribute="width" constant="60" id="e9A-u5-PTC"/>
+                        <constraint firstAttribute="height" constant="60" id="iAR-8a-aLK"/>
                     </constraints>
-                </imageView>
+                </view>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <gestureRecognizers/>
             <constraints>
-                <constraint firstItem="l2W-eg-yEh" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="0tg-6r-5jj"/>
-                <constraint firstAttribute="bottom" secondItem="1gG-Lz-w31" secondAttribute="bottom" constant="50" id="8y7-1K-S1F"/>
-                <constraint firstItem="jvr-Cg-SA2" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="H3U-bx-lMl"/>
-                <constraint firstItem="2tL-qt-RLR" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="MA4-BB-dZz"/>
-                <constraint firstItem="DrY-2n-Pyg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="MAQ-yf-o4d"/>
-                <constraint firstAttribute="trailing" secondItem="jvr-Cg-SA2" secondAttribute="trailing" constant="50" id="Qpd-Xn-2Ok"/>
-                <constraint firstAttribute="trailing" secondItem="1gG-Lz-w31" secondAttribute="trailing" constant="50" id="R1l-3j-ZTl"/>
-                <constraint firstAttribute="bottom" secondItem="tJW-LW-93q" secondAttribute="bottom" id="RBF-Sj-vtY"/>
-                <constraint firstAttribute="bottom" secondItem="DrY-2n-Pyg" secondAttribute="bottom" constant="50" id="Rpk-X2-Adz"/>
-                <constraint firstItem="l2W-eg-yEh" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="hTr-Ve-brW"/>
-                <constraint firstItem="nL7-cq-cwR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="jnQ-A0-Hbu"/>
-                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="AxE-Fj-E9T" secondAttribute="trailing" id="lcr-x6-zdZ"/>
-                <constraint firstItem="tJW-LW-93q" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="m5S-7E-K0o"/>
-                <constraint firstItem="nL7-cq-cwR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="oeN-Oz-jD3"/>
-                <constraint firstItem="2tL-qt-RLR" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="s3R-WP-jN0"/>
-                <constraint firstItem="AxE-Fj-E9T" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="vTP-pN-Kc9"/>
+                <constraint firstItem="PRj-P2-F2Z" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="50" id="1SY-FG-FIE"/>
+                <constraint firstItem="PRj-P2-F2Z" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="3SE-eS-PSj"/>
+                <constraint firstAttribute="trailing" secondItem="s8C-ts-Lnf" secondAttribute="trailing" constant="50" id="5Kv-mU-NIi"/>
+                <constraint firstItem="1c3-EF-JDF" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="50" id="IOV-02-bRz"/>
+                <constraint firstItem="Myy-Eq-SKA" firstAttribute="trailing" secondItem="vUN-kp-3ea" secondAttribute="trailing" id="JEq-jM-Po5"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="1c3-EF-JDF" secondAttribute="bottom" constant="50" id="JLf-yY-HY3"/>
+                <constraint firstItem="Edo-iS-YaG" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="MXb-D6-fRe"/>
+                <constraint firstAttribute="trailing" secondItem="m76-F0-RcF" secondAttribute="trailing" constant="50" id="Mq0-vh-JYi"/>
+                <constraint firstItem="Uca-HP-sas" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="OuP-UI-w48"/>
+                <constraint firstItem="m76-F0-RcF" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="50" id="RbK-M2-Mic"/>
+                <constraint firstAttribute="bottom" secondItem="s8C-ts-Lnf" secondAttribute="bottom" constant="50" id="UFX-fg-PUS"/>
+                <constraint firstItem="Myy-Eq-SKA" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="V9h-PP-nQB"/>
+                <constraint firstItem="Edo-iS-YaG" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Va2-Ab-l6h"/>
+                <constraint firstItem="jzb-aZ-WRf" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="WL9-VO-9kN"/>
+                <constraint firstItem="jzb-aZ-WRf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="cGd-hG-8Vd"/>
+                <constraint firstItem="Uca-HP-sas" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="f87-30-ub9"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
             <point key="canvasLocation" x="137.68115942028987" y="106.47321428571428"/>
         </view>
     </objects>
-    <resources>
-        <image name="1.png" width="12" height="12"/>
-        <image name="2.png" width="12" height="12"/>
-        <image name="3.png" width="12" height="12"/>
-        <image name="4.png" width="12" height="12"/>
-        <image name="5.png" width="12" height="12"/>
-        <image name="6.png" width="12" height="12"/>
-        <image name="7.png" width="12" height="12"/>
-        <image name="8.png" width="12" height="12"/>
-    </resources>
 </document>
