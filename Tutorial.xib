@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <viewController id="2qf-QG-2e1">
+            <view key="view" contentMode="scaleToFill" id="G2p-zv-paA">
+                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="luN-Bc-r8N" customClass="ClockView" customModule="Prototype" customModuleProvider="target">
+                        <rect key="frame" x="20" y="281" width="374" height="374"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SSB-th-UXe" customClass="NumbersView" customModule="Prototype" customModuleProvider="target">
+                                <rect key="frame" x="15" y="15" width="345" height="345"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemYellowColor" red="1" green="0.80000000000000004" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="width" secondItem="luN-Bc-r8N" secondAttribute="height" multiplier="1:1" id="Cku-yF-2Iq"/>
+                            <constraint firstItem="SSB-th-UXe" firstAttribute="top" secondItem="luN-Bc-r8N" secondAttribute="top" constant="15" id="GEX-Bx-pRo"/>
+                            <constraint firstAttribute="bottom" secondItem="SSB-th-UXe" secondAttribute="bottom" constant="14" id="Hg6-Zz-rnG"/>
+                            <constraint firstItem="SSB-th-UXe" firstAttribute="leading" secondItem="luN-Bc-r8N" secondAttribute="leading" constant="15" id="bfQ-Oy-M53"/>
+                            <constraint firstAttribute="trailing" secondItem="SSB-th-UXe" secondAttribute="trailing" constant="14" id="ruy-yy-Jb0"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                <constraints>
+                    <constraint firstItem="luN-Bc-r8N" firstAttribute="trailing" secondItem="G2p-zv-paA" secondAttribute="trailingMargin" id="Hl1-8W-nyj"/>
+                    <constraint firstItem="luN-Bc-r8N" firstAttribute="top" secondItem="jCD-KM-SVg" secondAttribute="top" constant="237" id="Ypd-sB-wrp"/>
+                    <constraint firstItem="luN-Bc-r8N" firstAttribute="leading" secondItem="G2p-zv-paA" secondAttribute="leadingMargin" id="c1h-ez-VXt"/>
+                </constraints>
+                <viewLayoutGuide key="safeArea" id="jCD-KM-SVg"/>
+            </view>
+            <point key="canvasLocation" x="-4.3478260869565224" y="207.58928571428569"/>
+        </viewController>
+    </objects>
+</document>
