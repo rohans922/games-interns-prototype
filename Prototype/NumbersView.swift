@@ -37,22 +37,26 @@ class NumbersView: UIView {
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setupProject()
-        let oneGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleOne(recognizer:)))
-        elementViews[0].addGestureRecognizer(oneGR)
-        let twoGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleTwo(recognizer:)))
-        elementViews[1].addGestureRecognizer(twoGR)
-        let threeGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleThree(recognizer:)))
-        elementViews[2].addGestureRecognizer(threeGR)
-        let fourGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleFour(recognizer:)))
-        elementViews[3].addGestureRecognizer(fourGR)
-        let fiveGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleFive(recognizer:)))
-        elementViews[4].addGestureRecognizer(fiveGR)
-        let sixGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleSix(recognizer:)))
-        elementViews[5].addGestureRecognizer(sixGR)
-        let sevenGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleSeven(recognizer:)))
-        elementViews[6].addGestureRecognizer(sevenGR)
-        let eightGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleEight(recognizer:)))
-        elementViews[7].addGestureRecognizer(eightGR)
+        for a in elementViews {
+            let GR = UIPanGestureRecognizer.init(target: self, action: #selector(handleAllGR(recognizer:)))
+            a.addGestureRecognizer(GR)
+        }
+//        let oneGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleOne(recognizer:)))
+//        elementViews[0].addGestureRecognizer(oneGR)
+//        let twoGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleTwo(recognizer:)))
+//        elementViews[1].addGestureRecognizer(twoGR)
+//        let threeGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleThree(recognizer:)))
+//        elementViews[2].addGestureRecognizer(threeGR)
+//        let fourGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleFour(recognizer:)))
+//        elementViews[3].addGestureRecognizer(fourGR)
+//        let fiveGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleFive(recognizer:)))
+//        elementViews[4].addGestureRecognizer(fiveGR)
+//        let sixGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleSix(recognizer:)))
+//        elementViews[5].addGestureRecognizer(sixGR)
+//        let sevenGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleSeven(recognizer:)))
+//        elementViews[6].addGestureRecognizer(sevenGR)
+//        let eightGR = UIPanGestureRecognizer.init(target: self, action: #selector(handleEight(recognizer:)))
+//        elementViews[7].addGestureRecognizer(eightGR)
     }
     
     func setupProject() {
@@ -95,42 +99,48 @@ class NumbersView: UIView {
         delegate = del
     }
     
-    @objc func handleOne(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleTwo(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleThree(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleFour(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleFive(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleSix(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleSeven(recognizer: UIPanGestureRecognizer) {
-        if (!gameOver!) {
-            handlePan(recognizer)
-        }
-    }
-    @objc func handleEight(recognizer: UIPanGestureRecognizer) {
+//    @objc func handleOne(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleTwo(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleThree(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleFour(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleFive(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleSix(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleSeven(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+//    @objc func handleEight(recognizer: UIPanGestureRecognizer) {
+//        if (!gameOver!) {
+//            handlePan(recognizer)
+//        }
+//    }
+    
+    @objc func handleAllGR(recognizer: UIPanGestureRecognizer) {
         if (!gameOver!) {
             handlePan(recognizer)
         }
