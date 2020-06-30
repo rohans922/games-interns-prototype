@@ -13,9 +13,12 @@ class ElementView: UIView {
     @IBOutlet var elementView: UIView!
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var highlight: UIView!
     private var location: CGPoint?
     private var imageName: String?
     private var index: Int?
+    private var animationIndex: Int?
+    private var symbol: String?
     private var swapIndices: [Int] = []
     
     override init(frame: CGRect) {
@@ -29,7 +32,7 @@ class ElementView: UIView {
     }
     
     private func commonInit() {
-    Bundle.main.loadNibNamed("ElementView", owner: self, options: nil)
+        Bundle.main.loadNibNamed("ElementView", owner: self, options: nil)
         addSubview(elementView)
         elementView.frame = self.bounds
     }
@@ -45,13 +48,17 @@ class ElementView: UIView {
     
     func setIndex(i: Int) {
         index = i
+        animationIndex = index
     }
     
     func getIndex() -> Int {
         return index!
     }
     
-    func setImageName(image: String) {
+    func setImageName(image: String, symbolName: String? = nil) {
+        if (symbolName != nil) {
+            symbol = symbolName
+        }
         imageName = image
         imageView.image = UIImage(named: image)
     }
@@ -66,6 +73,32 @@ class ElementView: UIView {
     
     func getLocation() -> CGPoint {
         return location!
+    }
+    func iterateImage() {
+        animationIndex! = (animationIndex! + 1) % 8
+        imageView.image = UIImage(named: (String(animationIndex! + 1)) + "_" + symbol!)
+    }
+    
+    func setMoveableHighlight() {
+        highlight.layer.cornerRadius = highlight.frame.height / 2
+        highlight.backgroundColor = UIColor(red: 0.271, green: 0.239, blue: 0.202, alpha: 0.3)
+        UIView.animate(withDuration:0.1, animations: {
+            self.highlight.alpha = 1
+        })
+    }
+    
+    func setMovingHighlight() {
+        highlight.layer.cornerRadius = highlight.frame.height / 2
+        highlight.backgroundColor = UIColor(red: 1, green: 0.937, blue: 0, alpha: 0.4)
+        UIView.animate(withDuration:0.1, animations: {
+            self.highlight.alpha = 1
+        })
+    }
+
+    func resetHighlight() {
+        UIView.animate(withDuration:0.3, animations: {
+            self.highlight.alpha = 0
+        })
     }
 
 }
