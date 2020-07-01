@@ -20,6 +20,7 @@ class ElementView: UIView {
     private var animationIndex: Int?
     private var symbol: String?
     private var swapIndices: [Int] = []
+    private var isError: Bool?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -35,6 +36,7 @@ class ElementView: UIView {
         Bundle.main.loadNibNamed("ElementView", owner: self, options: nil)
         addSubview(elementView)
         elementView.frame = self.bounds
+        isError = false
     }
     
     func setSwapIndices(_ first: Int, _ second: Int) {
@@ -82,6 +84,23 @@ class ElementView: UIView {
     func setMoveableHighlight() {
         highlight.layer.cornerRadius = highlight.frame.height / 2
         highlight.backgroundColor = UIColor(red: 0.271, green: 0.239, blue: 0.202, alpha: 0.3)
+        UIView.animate(withDuration:0.1, animations: {
+            self.highlight.alpha = 1
+        })
+    }
+    
+    func getIsError() -> Bool {
+        return isError!
+    }
+    
+    func isNotError() {
+        isError = false
+    }
+    
+    func setErrorHighlight() {
+        isError = true
+        highlight.layer.cornerRadius = highlight.frame.height / 2
+        highlight.backgroundColor = UIColor(red: 0.8275, green: 0.0275, blue: 0, alpha: 0.3)
         UIView.animate(withDuration:0.1, animations: {
             self.highlight.alpha = 1
         })
