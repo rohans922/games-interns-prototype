@@ -13,6 +13,8 @@
                 <outlet property="blackShadow" destination="rov-6f-bdD" id="FqY-9S-r95"/>
                 <outlet property="camera" destination="Gbb-gA-2zI" id="sQD-4O-STp"/>
                 <outlet property="clockView" destination="p6W-Lz-gWO" id="lVL-RM-XvB"/>
+                <outlet property="dialogue" destination="utr-sE-cAK" id="x0G-RS-9ZS"/>
+                <outlet property="dialogueLabel" destination="QTc-oe-u93" id="V5c-bj-egV"/>
                 <outlet property="filmBackground" destination="TUe-nq-FVf" id="N3t-gU-AT0"/>
                 <outlet property="filmStrip" destination="S6m-Jq-aMO" id="0oW-lp-ndk"/>
                 <outlet property="finalAnimationLocation" destination="2tQ-2l-YXY" id="Bkd-k6-3j9"/>
@@ -41,7 +43,7 @@
                         <constraint firstAttribute="width" secondItem="r3q-uU-Uhj" secondAttribute="height" multiplier="1:1" id="hIe-YC-eZa"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-nq-FVf">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-nq-FVf" userLabel="Film Background">
                     <rect key="frame" x="96.5" y="220" width="221" height="127"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TUe-nq-FVf" secondAttribute="height" multiplier="87:50" id="EXG-FT-QXa"/>
@@ -172,16 +174,44 @@
                         <constraint firstAttribute="width" secondItem="paM-rc-oCQ" secondAttribute="height" multiplier="1:1" id="CEp-CB-l8o"/>
                     </constraints>
                 </imageView>
-                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-2l-YXY">
+                <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-2l-YXY" userLabel="Final Animation View">
                     <rect key="frame" x="122" y="222.5" width="170" height="170"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="2tQ-2l-YXY" secondAttribute="height" multiplier="1:1" id="tRm-2n-GER"/>
                     </constraints>
                 </view>
+                <view alpha="0.0" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="utr-sE-cAK" userLabel="Dialogue">
+                    <rect key="frame" x="103" y="140" width="208" height="72"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dialogue_bubble.png" translatesAutoresizingMaskIntoConstraints="NO" id="EWj-RY-9oD" userLabel="Dialogue Bubble">
+                            <rect key="frame" x="0.0" y="0.0" width="208" height="72"/>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tap on the film strip to preview your animation" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QTc-oe-u93">
+                            <rect key="frame" x="10" y="0.0" width="188" height="54"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstItem="EWj-RY-9oD" firstAttribute="leading" secondItem="utr-sE-cAK" secondAttribute="leading" id="18S-dj-2q2"/>
+                        <constraint firstItem="QTc-oe-u93" firstAttribute="top" secondItem="utr-sE-cAK" secondAttribute="top" id="1jU-M0-g5U"/>
+                        <constraint firstAttribute="bottom" secondItem="EWj-RY-9oD" secondAttribute="bottom" id="6bo-Mq-ozd"/>
+                        <constraint firstItem="QTc-oe-u93" firstAttribute="leading" secondItem="utr-sE-cAK" secondAttribute="leading" constant="10" id="XND-mG-Xee"/>
+                        <constraint firstAttribute="trailing" secondItem="EWj-RY-9oD" secondAttribute="trailing" id="XZq-zg-bhJ"/>
+                        <constraint firstAttribute="bottom" secondItem="QTc-oe-u93" secondAttribute="bottom" constant="18" id="eZv-va-sa2"/>
+                        <constraint firstItem="EWj-RY-9oD" firstAttribute="top" secondItem="utr-sE-cAK" secondAttribute="top" id="i1j-eT-l3q"/>
+                        <constraint firstAttribute="height" constant="72" id="jMj-fC-Mrc"/>
+                        <constraint firstAttribute="trailing" secondItem="QTc-oe-u93" secondAttribute="trailing" constant="10" id="okK-Pj-eCP"/>
+                        <constraint firstAttribute="width" constant="208" id="zB6-R7-Frd"/>
+                    </constraints>
+                </view>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
+                <constraint firstItem="TUe-nq-FVf" firstAttribute="top" secondItem="utr-sE-cAK" secondAttribute="bottom" constant="8" id="0V8-mR-vPO"/>
                 <constraint firstItem="IPx-Rz-f2r" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" constant="5" id="0W9-hP-Nrd"/>
                 <constraint firstItem="S6m-Jq-aMO" firstAttribute="width" secondItem="p6W-Lz-gWO" secondAttribute="width" multiplier="0.625356" id="2lk-JG-pm2"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="p6W-Lz-gWO" secondAttribute="bottom" constant="68" id="2un-yK-mX9"/>
@@ -209,6 +239,7 @@
                 <constraint firstItem="2tQ-2l-YXY" firstAttribute="width" secondItem="p6W-Lz-gWO" secondAttribute="width" multiplier="0.48433" id="YcD-HT-cdO"/>
                 <constraint firstItem="NHw-iZ-Vsg" firstAttribute="width" secondItem="p6W-Lz-gWO" secondAttribute="width" multiplier="0.492877" id="Z13-wF-sAy"/>
                 <constraint firstItem="Gbb-gA-2zI" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="ain-Ms-rmy"/>
+                <constraint firstItem="utr-sE-cAK" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="cQ8-fg-ufW"/>
                 <constraint firstItem="2tQ-2l-YXY" firstAttribute="bottom" secondItem="9fX-6A-BSH" secondAttribute="top" constant="-30" id="dD5-hW-0ud"/>
                 <constraint firstAttribute="trailing" secondItem="8Or-nQ-4NO" secondAttribute="trailing" constant="50" id="dO7-Lp-qL2"/>
                 <constraint firstItem="bem-0g-JsJ" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="-1" id="doG-iU-DjK"/>
@@ -235,6 +266,7 @@
     </objects>
     <resources>
         <image name="camera.png" width="28" height="22.333333969116211"/>
+        <image name="dialogue_bubble.png" width="250" height="87.5"/>
         <image name="film_background.png" width="233" height="134.5"/>
         <image name="film_strip.png" width="195" height="59"/>
         <image name="help_button.png" width="34" height="34"/>

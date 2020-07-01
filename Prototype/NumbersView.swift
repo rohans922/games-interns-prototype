@@ -20,6 +20,7 @@ class NumbersView: UIView {
     private var gameOver: Bool?
     private var animationCount: Int?
     private var animationDeltaY: CGFloat?
+    private var frameWidth: CGFloat?
     private var currentSymbol: String?
     @IBOutlet var numbersView: UIView!
     @IBOutlet var elementViews: [ElementView]!
@@ -53,10 +54,10 @@ class NumbersView: UIView {
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
-//        let sequence = 0 ..< 8 // Comment out if not random order
-//        let shuffledSequence = sequence.shuffled() // Use for random order
+        let sequence = 0 ..< 8 // Comment out if not random order
+        let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+//        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
@@ -112,6 +113,7 @@ class NumbersView: UIView {
                 self.elementViews[0].transform = .identity
             })
         }
+        frameWidth = numbersView.frame.width / 2
     }
     
     func setDelegate(del: NumbersViewDelegate) {
@@ -130,40 +132,50 @@ class NumbersView: UIView {
             delegate?.animateSequence(elementViews: elementViews)
         }
     }
+
+    func calculateDistance(_ a: CGPoint, _ b: CGPoint) -> CGFloat {
+        let xDist = a.x - b.x
+        let yDist = a.y - b.y
+        return CGFloat(sqrt(xDist * xDist + yDist * yDist))
+    }
     
     private func handlePan(_ recognizer: UIPanGestureRecognizer) {
         let translation = recognizer.translation(in: self.numbersView)
         if let view = recognizer.view as? ElementView {
-            view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
-            let swapIndices = view.getSwapIndices()
-            let hitbox = view.frame.insetBy(dx: 3, dy: 3)
-            if hitbox.intersects(elementViews[swapIndices[0]].frame) {
-                recognizer.state = .ended
-                let swap = view.getImageName()
-                view.setImageName(image: elementViews[swapIndices[0]].getImageName())
-                elementViews[swapIndices[0]].setImageName(image: swap)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    self.startAnimation()
-                }
-            } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
-                recognizer.state = .ended
-                let swap = view.getImageName()
-                view.setImageName(image: elementViews[swapIndices[1]].getImageName())
-                elementViews[swapIndices[1]].setImageName(image: swap)
-                DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                    if (!self.gameOver!) {
-                        self.delegate?.animateSequence(elementViews: self.elementViews)
+            if (calculateDistance(numbersView.center, view.center) <= frameWidth!) {
+                view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
+                let swapIndices = view.getSwapIndices()
+                let hitbox = view.frame.insetBy(dx: 3, dy: 3)
+                if hitbox.intersects(elementViews[swapIndices[0]].frame) {
+                    recognizer.state = .ended
+                    let swap = view.getImageName()
+                    view.setImageName(image: elementViews[swapIndices[0]].getImageName())
+                    elementViews[swapIndices[0]].setImageName(image: swap)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        self.startAnimation()
+                    }
+                } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
+                    recognizer.state = .ended
+                    let swap = view.getImageName()
+                    view.setImageName(image: elementViews[swapIndices[1]].getImageName())
+                    elementViews[swapIndices[1]].setImageName(image: swap)
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
+                        if (!self.gameOver!) {
+                            self.delegate?.animateSequence(elementViews: self.elementViews)
+                        }
+                    }
+                } else {
+                    for (index, element) in elementViews.enumerated() {
+                        if (index != view.getIndex()) && (!element.getIsError()) && (hitbox.intersects(element.frame)) {
+                            element.setErrorHighlight()
+                        } else if (!hitbox.intersects(element.frame)) && (element.getIndex() != swapIndices[0]) && (element.getIndex() != swapIndices[1]) {
+                            element.isNotError()
+                            element.resetHighlight()
+                        }
                     }
                 }
             } else {
-                for (index, element) in elementViews.enumerated() {
-                    if (index != view.getIndex()) && (!element.getIsError()) && (hitbox.intersects(element.frame)) {
-                        element.setErrorHighlight()
-                    } else if (!hitbox.intersects(element.frame)){
-                        element.isNotError()
-                        element.resetHighlight()
-                    }
-                }
+                recognizer.state = .ended
             }
         }
         

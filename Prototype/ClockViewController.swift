@@ -27,6 +27,8 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var blackShadow: UIView!
     @IBOutlet weak var grayShadow: UIView!
     @IBOutlet weak var filmBackground: UIImageView!
+    @IBOutlet weak var dialogue: UIView!
+    @IBOutlet weak var dialogueLabel: UILabel!
     @IBOutlet weak var filmStrip: UIImageView!
     @IBOutlet weak var roundArrow: UIImageView!
     @IBOutlet weak var finalAnimationLocation: UIView!
@@ -49,6 +51,7 @@ class ClockViewController: UIViewController {
         youWin.font = UIFont(name: "NYTKarnakCondensed-Bold", size: 38)
         levelName.font = UIFont(name: "NYTKarnakCondensed-Bold", size: 40)
         winMessage.font = UIFont(name: "NYTFranklin-Medium", size: 18)
+        dialogueLabel.font = UIFont(name: "NYTFranklin-Medium", size: 17)
         restartButton.titleLabel?.font = UIFont(name: "NYTFranklin-Medium", size: 14)
         nextButton.titleLabel?.font = UIFont(name: "NYTFranklin-Medium", size: 14)
         restartButton.layer.borderColor = UIColor(red: 0.863, green: 0.863, blue: 0.863, alpha: 1).cgColor
@@ -80,6 +83,15 @@ class ClockViewController: UIViewController {
             UIView.animate(withDuration:0.3, delay: 0.9, animations: {
                 self.animationImage.alpha = 1
                 self.filmBackground.alpha = 1
+            })
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + 4) {
+            UIView.animate(withDuration:0.3, animations: {
+                self.dialogue.alpha = 1
+            }, completion: {(value: Bool) in
+                UIView.animate(withDuration:0.3, delay: 4.5, animations: {
+                    self.dialogue.alpha = 0
+                })
             })
         }
     }
@@ -124,6 +136,13 @@ class ClockViewController: UIViewController {
         if (currentSymbolIndex! >= symbolSequence.count) {
             currentSymbolIndex = 0
         }
+        UIView.animate(withDuration:0.3, animations: {
+            self.numbersView.alpha = 0
+        }, completion: {(value: Bool) in
+            UIView.animate(withDuration:0.3, animations: {
+                self.numbersView.alpha = 1
+            })
+        })
         restartAnimations()
     }
     
@@ -182,6 +201,7 @@ extension ClockViewController: NumbersViewDelegate {
         UIView.animate(withDuration:0.2, delay: 0.3, animations: {
             self.camera.alpha = 0
             self.roundArrow.alpha = 0
+            self.dialogue.isHidden = true
         })
     }
     
