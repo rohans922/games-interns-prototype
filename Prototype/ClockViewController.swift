@@ -136,10 +136,10 @@ class ClockViewController: UIViewController {
         if (currentSymbolIndex! >= symbolSequence.count) {
             currentSymbolIndex = 0
         }
-        UIView.animate(withDuration:0.3, animations: {
+        UIView.animate(withDuration:0.2, animations: {
             self.numbersView.alpha = 0
         }, completion: {(value: Bool) in
-            UIView.animate(withDuration:0.3, animations: {
+            UIView.animate(withDuration:0.3, delay: 0.2, animations: {
                 self.numbersView.alpha = 1
             })
         })
