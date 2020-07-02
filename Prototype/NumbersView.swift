@@ -51,6 +51,19 @@ class NumbersView: UIView {
         animationCount = 0
     }
     
+    func setupTutorial() {
+           gameOver = false
+           
+           let tutorialSequence = [0, 4, 2, 3, 1, 5, 6, 7] // Use for slightly correct order
+           
+           for (index, element) in elementViews.enumerated() {
+               element.setIndex(i: index)
+               element.setImageName(image: String(tutorialSequence[index] + 1) + "_chick" )
+               element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
+           }
+           
+       }
+
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false

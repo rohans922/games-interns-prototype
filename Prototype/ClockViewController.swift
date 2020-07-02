@@ -37,6 +37,7 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        numbersView.setupTutorial()
         firstOpen = true
         clockView.alpha = 0
         camera.alpha = 0
@@ -119,6 +120,18 @@ class ClockViewController: UIViewController {
         restartButton.layer.cornerRadius = 23
         nextButton.layer.cornerRadius = 23
     }
+    
+    init(asTutorial: Bool){
+       super.init(nibName: "ClockViewController", bundle: nil)
+            if (asTutorial){
+                numbersView?.setupTutorial()
+            }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     @IBAction func onHelp(_ sender: Any) {
         print("HELP BUTTON PRESSED")
