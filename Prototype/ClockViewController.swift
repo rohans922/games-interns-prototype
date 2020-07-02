@@ -9,7 +9,7 @@ import UIKit
 
 class ClockViewController: UIViewController {
 
-    private let symbolSequence: [String] = ["chick", "match"]
+    private let symbolSequence: [String] = ["chick", "chick", "match"]
     private var currentSymbolIndex: Int?
     private var firstOpen: Bool?
     
@@ -37,7 +37,10 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+       
         numbersView.setupTutorial()
+        
+        
         firstOpen = true
         clockView.alpha = 0
         camera.alpha = 0
