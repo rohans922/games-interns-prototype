@@ -38,6 +38,7 @@ class NumbersView: UIView {
     }
     
     private func commonInit() {
+        print("Init common")
         Bundle.main.loadNibNamed("NumbersView", owner: self, options: nil)
         addSubview(numbersView)
         selectionFeedbackGenerator = UISelectionFeedbackGenerator()
@@ -46,52 +47,35 @@ class NumbersView: UIView {
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setupProject()
-        for (index, element) in elementViews.enumerated() {
+        for a in elementViews {
             let GR = UIPanGestureRecognizer.init(target: self, action: #selector(handleAllGR(recognizer:)))
-            element.addGestureRecognizer(GR)
-            if (index != 0) {
-                element.alpha = 0
-            }
+            a.addGestureRecognizer(GR)
+            a.alpha = 0
         }
         animationCount = 0
     }
     
     func setupTutorial() {
-           gameOver = false
-           
-        print("TUTORIAL")
-        
-           let tutorialSequence = [0, 4, 2, 3, 1, 5, 6, 7] // Use for slightly correct order
-           
+        gameOver = false
+        let tutorialSequence = [0, 4, 2, 3, 1, 5, 6, 7] // Use for slightly correct order
+        currentSequence = tutorialSequence
            for (index, element) in elementViews.enumerated() {
                element.setIndex(i: index)
                element.setImageName(image: String(tutorialSequence[index] + 1) + "_chick" )
                element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
            }
-           
        }
 
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
-<<<<<<< HEAD
-//        let sequence = 0 ..< 8 // Comment out if not random order
-//        let shuffledSequence = sequence.shuffled() // Use for random order
-=======
-<<<<<<< HEAD
-    //let sequence = 0 ..< 8 // Comment out if not random order
-     //let shuffledSequence = sequence.shuffled() // Use for random order
-           let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-    // let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
-    //let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
-=======
         let sequence = 0 ..< 8 // Comment out if not random order
         let shuffledSequence = sequence.shuffled() // Use for random order
->>>>>>> 3f058feee30b2682b213b6f9b1911a068f8a8748
-//        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
-//        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
->>>>>>> 8689938c867ff65fc766b85712947f7ab82a9a3f
+    //let sequence = 0 ..< 8 // Comment out if not random order
+     //let shuffledSequence = sequence.shuffled() // Use for random order
+//           let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+    // let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+    //let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
@@ -106,7 +90,7 @@ class NumbersView: UIView {
         }
     }
     
-    func restart (symbol: String) {
+    func restart (symbol: String, isTutorial: Bool) {
         gameOver = false
         self.animationCount! = 2001
         UIView.animate(withDuration:0.5, delay: 2.2, animations: {
@@ -117,7 +101,11 @@ class NumbersView: UIView {
             }
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.15) {
-            self.setupProject(symbol: symbol)
+            if (isTutorial) {
+                self.setupTutorial()
+            } else {
+                self.setupProject(symbol: symbol)
+            }
         }
     }
     
@@ -131,13 +119,16 @@ class NumbersView: UIView {
             e.setLocation(point: e.center)
         }
         animationDeltaY = (numbersCenter.y - (numbersView.center.y - elementViews[0].center.y)) - animationCenter.y
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.03) {
+            UIView.animate(withDuration: 0.3, animations: {self.elementViews[0].alpha = 1})
             self.elementViews[0].transform = CGAffineTransform(scaleX: 3, y: 3)
             self.elementViews[0].center = CGPoint(x:                         self.elementViews[0].center.x, y: self.elementViews[0].center.y - self.animationDeltaY!)
         }
         UIView.animate(withDuration:0.3, delay: 1.7, animations: {
-            for e in self.elementViews {
-                    e.alpha = 1
+            for (index, element) in self.elementViews.enumerated() {
+                if index != 0 {
+                    element.alpha = 1
+                }
             }
         })
         DispatchQueue.main.asyncAfter(deadline: .now() + 1.8) {
