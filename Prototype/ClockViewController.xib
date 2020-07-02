@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,6 +25,7 @@
                 <outlet property="numbersView" destination="ruU-37-V1l" id="Ohe-ZX-Qug"/>
                 <outlet property="restartButton" destination="9D4-Ri-qCO" id="PWs-8H-zfR"/>
                 <outlet property="roundArrow" destination="NHw-iZ-Vsg" id="Fub-XK-OSm"/>
+                <outlet property="ruleView" destination="ywG-m8-pMh" id="I6N-FB-88c"/>
                 <outlet property="titleLabel" destination="hiS-Vt-tDs" id="GLM-QK-6Jl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="winMessage" destination="8Or-nQ-4NO" id="h81-O3-xiu"/>
@@ -207,6 +208,11 @@
                         <constraint firstAttribute="trailing" secondItem="QTc-oe-u93" secondAttribute="trailing" constant="10" id="okK-Pj-eCP"/>
                         <constraint firstAttribute="width" constant="208" id="zB6-R7-Frd"/>
                     </constraints>
+                </view>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywG-m8-pMh" customClass="RulesView" customModule="Prototype" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="146" width="439" height="615"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

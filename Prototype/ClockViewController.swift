@@ -15,6 +15,9 @@ class ClockViewController: UIViewController {
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var numbersView: NumbersView!
+    
+    @IBOutlet weak var ruleView: RulesView!
+    
     @IBOutlet weak var youWin: UILabel!
     @IBOutlet weak var winMessage: UILabel!
     @IBOutlet weak var levelName: UILabel!
@@ -38,6 +41,9 @@ class ClockViewController: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
        
+        
+        ruleView.setUpRules()
+        
         numbersView.setupTutorial()
         
         

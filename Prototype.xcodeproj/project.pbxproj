@@ -47,6 +47,8 @@
 		DB21AE2524A2ACD400BAB1DD /* 8_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1D24A2ACD300BAB1DD /* 8_chick.png */; };
 		DB21AE2624A2ACD400BAB1DD /* 3_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1E24A2ACD400BAB1DD /* 3_chick.png */; };
 		DB21AE2724A2ACD400BAB1DD /* 4_chick.png in Resources */ = {isa = PBXBuildFile; fileRef = DB21AE1F24A2ACD400BAB1DD /* 4_chick.png */; };
+		DB3D068624AE5E360030C317 /* RulesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DB3D068524AE5E360030C317 /* RulesView.swift */; };
+		DB3D068824AE606D0030C317 /* RulesView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DB3D068724AE606D0030C317 /* RulesView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -113,6 +115,8 @@
 		DB21AE1D24A2ACD300BAB1DD /* 8_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 8_chick.png; sourceTree = "<group>"; };
 		DB21AE1E24A2ACD400BAB1DD /* 3_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 3_chick.png; sourceTree = "<group>"; };
 		DB21AE1F24A2ACD400BAB1DD /* 4_chick.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 4_chick.png; sourceTree = "<group>"; };
+		DB3D068524AE5E360030C317 /* RulesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RulesView.swift; sourceTree = "<group>"; };
+		DB3D068724AE606D0030C317 /* RulesView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RulesView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -194,6 +198,8 @@
 				1CA7AD11249AA5980064282D /* SceneDelegate.swift */,
 				1C156D48249BE91900BE2F95 /* ClockViewController.swift */,
 				1C156D49249BE91900BE2F95 /* ClockViewController.xib */,
+				DB3D068524AE5E360030C317 /* RulesView.swift */,
+				DB3D068724AE606D0030C317 /* RulesView.xib */,
 				1C156D4E249BEE0B00BE2F95 /* NumbersView.swift */,
 				1C156D50249BEE3700BE2F95 /* NumbersView.xib */,
 				1C82E27424A25789001B5F7F /* ElementView.swift */,
@@ -418,6 +424,7 @@
 				CBFCAF0A24AA4AAA00450254 /* film_strip.png in Resources */,
 				DB21AE2724A2ACD400BAB1DD /* 4_chick.png in Resources */,
 				1C156D51249BEE3700BE2F95 /* NumbersView.xib in Resources */,
+				DB3D068824AE606D0030C317 /* RulesView.xib in Resources */,
 				DB21AE2424A2ACD400BAB1DD /* 7_chick.png in Resources */,
 				CB388F4124AD434E00568335 /* dialogue_bubble.png in Resources */,
 				DB21AE2524A2ACD400BAB1DD /* 8_chick.png in Resources */,
@@ -448,6 +455,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DB3D068624AE5E360030C317 /* RulesView.swift in Sources */,
 				1CA7AD10249AA5980064282D /* AppDelegate.swift in Sources */,
 				1C156D55249BF68100BE2F95 /* ClockView.swift in Sources */,
 				1C82E27524A25789001B5F7F /* ElementView.swift in Sources */,

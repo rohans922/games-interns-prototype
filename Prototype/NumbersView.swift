@@ -51,6 +51,8 @@ class NumbersView: UIView {
         animationCount = 0
     }
     
+    
+    
     func setupTutorial() {
            gameOver = false
            
@@ -69,19 +71,16 @@ class NumbersView: UIView {
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
-<<<<<<< HEAD
     //let sequence = 0 ..< 8 // Comment out if not random order
      //let shuffledSequence = sequence.shuffled() // Use for random order
            let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
     // let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
     //let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
-=======
-        let sequence = 0 ..< 8 // Comment out if not random order
-        let shuffledSequence = sequence.shuffled() // Use for random order
+        //let sequence = 0 ..< 8 // Comment out if not random order
+       // let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
 //        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
->>>>>>> 8689938c867ff65fc766b85712947f7ab82a9a3f
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)
