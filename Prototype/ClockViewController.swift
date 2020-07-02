@@ -10,14 +10,15 @@ import UIKit
 class ClockViewController: UIViewController {
 
     private let symbolSequence: [String] = ["chick", "chick", "match"]
+    private var isTutorial: Bool?
     private var currentSymbolIndex: Int?
     private var firstOpen: Bool?
+    private var dialogueTimer: Timer?
+    private var dialogueTimerCount: Int?
+    private var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var numbersView: NumbersView!
-    
-    @IBOutlet weak var ruleView: RulesView!
-    
     @IBOutlet weak var youWin: UILabel!
     @IBOutlet weak var winMessage: UILabel!
     @IBOutlet weak var levelName: UILabel!
@@ -40,13 +41,9 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
-       
-        
-        ruleView.setUpRules()
-        
+        selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        dialogueTimerCount = 0
         numbersView.setupTutorial()
-        
-        
         firstOpen = true
         clockView.alpha = 0
         camera.alpha = 0
@@ -99,9 +96,15 @@ class ClockViewController: UIViewController {
             UIView.animate(withDuration:0.3, animations: {
                 self.dialogue.alpha = 1
             }, completion: {(value: Bool) in
-                UIView.animate(withDuration:0.3, delay: 4.5, animations: {
-                    self.dialogue.alpha = 0
-                })
+                self.dialogueTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ t in
+                    self.dialogueTimerCount! += 1
+                    if (self.dialogueTimerCount == 4) {
+                        UIView.animate(withDuration:0.3, animations: {
+                            self.dialogue.alpha = 0
+                        })
+                        t.invalidate()
+                    }
+                }
             })
         }
     }
@@ -109,6 +112,11 @@ class ClockViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
         if touch?.view == filmBackground {
+            self.dialogueTimer?.invalidate()
+            UIView.animate(withDuration:0.3, animations: {
+                self.dialogue.alpha = 0
+            })
+            selectionFeedbackGenerator!.selectionChanged()
             numbersView.startAnimation()
         }
     }
@@ -117,8 +125,14 @@ class ClockViewController: UIViewController {
         super.viewDidLayoutSubviews()
         clockView.setRadius()
         if (firstOpen!) {
-            numbersView.setFrame(numbersCenter: numbersView.center, animationCenter: finalAnimationLocation.center)
-            firstOpen = false
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.numbersView.setFrame(numbersCenter: self.numbersView.center, animationCenter: self.finalAnimationLocation.center)
+            }
+            if (self.isTutorial ?? false) {
+                self.restartButton.setTitle("Repeat tutorial", for: .normal)
+                self.nextButton.setTitle("Start game", for: .normal)
+            }
+            self.firstOpen = false
         }
         header.layer.borderColor = UIColor.black.cgColor
         header.layer.borderWidth = 1
@@ -131,10 +145,11 @@ class ClockViewController: UIViewController {
     }
     
     init(asTutorial: Bool){
-       super.init(nibName: "ClockViewController", bundle: nil)
-            if (asTutorial){
-                numbersView?.setupTutorial()
-            }
+        super.init(nibName: "ClockViewController", bundle: nil)
+        if (asTutorial){
+            numbersView?.setupTutorial()
+            isTutorial = true
+        }
     }
     
     required init?(coder: NSCoder) {
@@ -143,10 +158,11 @@ class ClockViewController: UIViewController {
     
     
     @IBAction func onHelp(_ sender: Any) {
-        print("HELP BUTTON PRESSED")
+        selectionFeedbackGenerator!.selectionChanged()
     }
     
     @IBAction func onRetry(_ sender: Any) {
+        selectionFeedbackGenerator!.selectionChanged()
         numbersView.retry()
         let name = self.numbersView.getLast()
         self.animationImage.image = UIImage(named: name)
@@ -154,6 +170,10 @@ class ClockViewController: UIViewController {
     }
     
     @IBAction func onKeepPlaying(_ sender: Any) {
+        isTutorial = false
+        self.restartButton.setTitle("Play again", for: .normal)
+        self.nextButton.setTitle("Keep playing", for: .normal)
+        selectionFeedbackGenerator!.selectionChanged()
         currentSymbolIndex! += 1
         if (currentSymbolIndex! >= symbolSequence.count) {
             currentSymbolIndex = 0
@@ -169,12 +189,13 @@ class ClockViewController: UIViewController {
     }
     
     @IBAction func onRestart(_ sender: Any) {
+        selectionFeedbackGenerator!.selectionChanged()
         restartAnimations()
     }
     
     func restartAnimations () {
         levelName.text = symbolSequence[currentSymbolIndex!].prefix(1).capitalized + symbolSequence[currentSymbolIndex!].dropFirst()
-        numbersView.restart(symbol: symbolSequence[currentSymbolIndex!])
+        numbersView.restart(symbol: symbolSequence[currentSymbolIndex!], isTutorial: isTutorial!)
         UIView.animate(withDuration:0.3, animations: {
             self.youWin.alpha = 0
             self.winMessage.alpha = 0
@@ -250,8 +271,8 @@ extension ClockViewController: NumbersViewDelegate {
                     self?.winMessage.alpha = 1.0
                 })
                 UIView.animate(withDuration: 0.3, delay: 0.4, animations: {
-                    self?.restartButton.alpha = 1.0
                     self?.nextButton.alpha = 1.0
+                    self?.restartButton.alpha = 1.0
                 })
                 }
             )

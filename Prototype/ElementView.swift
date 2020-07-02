@@ -21,6 +21,7 @@ class ElementView: UIView {
     private var symbol: String?
     private var swapIndices: [Int] = []
     private var isError: Bool?
+    private var notificationFeedbackGenerator: UINotificationFeedbackGenerator?
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -37,6 +38,8 @@ class ElementView: UIView {
         addSubview(elementView)
         elementView.frame = self.bounds
         isError = false
+        notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+        notificationFeedbackGenerator!.prepare()
     }
     
     func setSwapIndices(_ first: Int, _ second: Int) {
@@ -98,6 +101,9 @@ class ElementView: UIView {
     }
     
     func setErrorHighlight() {
+        if (!isError!) {
+            notificationFeedbackGenerator!.notificationOccurred(.error)
+        }
         isError = true
         highlight.layer.cornerRadius = highlight.frame.height / 2
         highlight.backgroundColor = UIColor(red: 0.8275, green: 0.0275, blue: 0, alpha: 0.5)
