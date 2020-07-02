@@ -12,6 +12,9 @@ class ClockViewController: UIViewController {
     private let symbolSequence: [String] = ["chick", "match"]
     private var currentSymbolIndex: Int?
     private var firstOpen: Bool?
+    private var dialogueTimer: Timer?
+    private var dialogueTimerCount: Int?
+    private var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
     
     @IBOutlet weak var clockView: ClockView!
     @IBOutlet weak var numbersView: NumbersView!
@@ -37,6 +40,9 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+        selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        
+        dialogueTimerCount = 0
         firstOpen = true
         clockView.alpha = 0
         camera.alpha = 0
@@ -89,9 +95,15 @@ class ClockViewController: UIViewController {
             UIView.animate(withDuration:0.3, animations: {
                 self.dialogue.alpha = 1
             }, completion: {(value: Bool) in
-                UIView.animate(withDuration:0.3, delay: 4.5, animations: {
-                    self.dialogue.alpha = 0
-                })
+                self.dialogueTimer = Timer.scheduledTimer(withTimeInterval: 1, repeats: true){ t in
+                    self.dialogueTimerCount! += 1
+                    if (self.dialogueTimerCount == 4) {
+                        UIView.animate(withDuration:0.3, animations: {
+                            self.dialogue.alpha = 0
+                        })
+                        t.invalidate()
+                    }
+                }
             })
         }
     }
@@ -99,6 +111,11 @@ class ClockViewController: UIViewController {
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
         if touch?.view == filmBackground {
+            self.dialogueTimer?.invalidate()
+            UIView.animate(withDuration:0.3, animations: {
+                self.dialogue.alpha = 0
+            })
+            selectionFeedbackGenerator!.selectionChanged()
             numbersView.startAnimation()
         }
     }
@@ -121,10 +138,11 @@ class ClockViewController: UIViewController {
     }
     
     @IBAction func onHelp(_ sender: Any) {
-        print("HELP BUTTON PRESSED")
+        selectionFeedbackGenerator!.selectionChanged()
     }
     
     @IBAction func onRetry(_ sender: Any) {
+        selectionFeedbackGenerator!.selectionChanged()
         numbersView.retry()
         let name = self.numbersView.getLast()
         self.animationImage.image = UIImage(named: name)
@@ -132,6 +150,7 @@ class ClockViewController: UIViewController {
     }
     
     @IBAction func onKeepPlaying(_ sender: Any) {
+        selectionFeedbackGenerator!.selectionChanged()
         currentSymbolIndex! += 1
         if (currentSymbolIndex! >= symbolSequence.count) {
             currentSymbolIndex = 0
@@ -147,6 +166,7 @@ class ClockViewController: UIViewController {
     }
     
     @IBAction func onRestart(_ sender: Any) {
+        selectionFeedbackGenerator!.selectionChanged()
         restartAnimations()
     }
     

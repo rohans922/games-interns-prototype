@@ -22,6 +22,8 @@ class NumbersView: UIView {
     private var animationDeltaY: CGFloat?
     private var frameWidth: CGFloat?
     private var currentSymbol: String?
+    private var selectionFeedbackGenerator: UISelectionFeedbackGenerator?
+    private var notificationFeedbackGenerator: UINotificationFeedbackGenerator?
     @IBOutlet var numbersView: UIView!
     @IBOutlet var elementViews: [ElementView]!
     
@@ -38,6 +40,9 @@ class NumbersView: UIView {
     private func commonInit() {
         Bundle.main.loadNibNamed("NumbersView", owner: self, options: nil)
         addSubview(numbersView)
+        selectionFeedbackGenerator = UISelectionFeedbackGenerator()
+        notificationFeedbackGenerator = UINotificationFeedbackGenerator()
+        notificationFeedbackGenerator!.prepare()
         numbersView.frame = self.bounds
         numbersView.autoresizingMask = [.flexibleHeight, .flexibleWidth]
         setupProject()
@@ -54,10 +59,10 @@ class NumbersView: UIView {
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
-        let sequence = 0 ..< 8 // Comment out if not random order
-        let shuffledSequence = sequence.shuffled() // Use for random order
+//        let sequence = 0 ..< 8 // Comment out if not random order
+//        let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-//        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
@@ -147,6 +152,7 @@ class NumbersView: UIView {
                 let swapIndices = view.getSwapIndices()
                 let hitbox = view.frame.insetBy(dx: 10, dy: 10)
                 if hitbox.intersects(elementViews[swapIndices[0]].frame) {
+                    notificationFeedbackGenerator!.notificationOccurred(.success)
                     recognizer.state = .ended
                     let swap = view.getImageName()
                     view.setImageName(image: elementViews[swapIndices[0]].getImageName())
@@ -155,6 +161,7 @@ class NumbersView: UIView {
                         self.startAnimation()
                     }
                 } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
+                    notificationFeedbackGenerator!.notificationOccurred(.success)
                     recognizer.state = .ended
                     let swap = view.getImageName()
                     view.setImageName(image: elementViews[swapIndices[1]].getImageName())
@@ -213,12 +220,13 @@ class NumbersView: UIView {
                     for a in self.elementViews {
                         a.iterateImage()
                     }
-                    
+                    self.selectionFeedbackGenerator!.selectionChanged()
                     var _ = Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true){ t in
                         self.animationCount! += 1
                         for a in self.elementViews {
                             a.iterateImage()
                         }
+                        self.selectionFeedbackGenerator!.selectionChanged()
                         if self.animationCount! >= 1 {
                             t.invalidate()
                             self.animationCount! = 0
@@ -227,6 +235,7 @@ class NumbersView: UIView {
                                 for a in self.elementViews {
                                     a.iterateImage()
                                 }
+                                self.selectionFeedbackGenerator!.selectionChanged()
                                 if self.animationCount! >= 2 {
                                     t.invalidate()
                                     self.animationCount! = 0
@@ -235,6 +244,7 @@ class NumbersView: UIView {
                                         for a in self.elementViews {
                                             a.iterateImage()
                                         }
+                                        self.selectionFeedbackGenerator!.selectionChanged()
                                         if self.animationCount! >= 1 {
                                             t.invalidate()
                                             self.delegate?.whenFinished()
@@ -243,6 +253,9 @@ class NumbersView: UIView {
                                                 self.animationCount! += 1
                                                 for a in self.elementViews {
                                                     a.iterateImage()
+                                                }
+                                                if self.animationCount! <= 9 {
+                                                    self.selectionFeedbackGenerator!.selectionChanged()
                                                 }
                                                 if self.animationCount! >= 2000 {
                                                     t.invalidate()
