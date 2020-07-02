@@ -100,7 +100,7 @@ class ElementView: UIView {
     func setErrorHighlight() {
         isError = true
         highlight.layer.cornerRadius = highlight.frame.height / 2
-        highlight.backgroundColor = UIColor(red: 0.8275, green: 0.0275, blue: 0, alpha: 0.3)
+        highlight.backgroundColor = UIColor(red: 0.8275, green: 0.0275, blue: 0, alpha: 0.5)
         UIView.animate(withDuration:0.2, animations: {
             self.highlight.alpha = 1
         })

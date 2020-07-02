@@ -54,10 +54,10 @@ class NumbersView: UIView {
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
-//        let sequence = 0 ..< 8 // Comment out if not random order
-//        let shuffledSequence = sequence.shuffled() // Use for random order
+        let sequence = 0 ..< 8 // Comment out if not random order
+        let shuffledSequence = sequence.shuffled() // Use for random order
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+//        let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
@@ -145,7 +145,7 @@ class NumbersView: UIView {
             if (calculateDistance(numbersView.center, view.center) <= frameWidth!) {
                 view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
                 let swapIndices = view.getSwapIndices()
-                let hitbox = view.frame.insetBy(dx: 3, dy: 3)
+                let hitbox = view.frame.insetBy(dx: 10, dy: 10)
                 if hitbox.intersects(elementViews[swapIndices[0]].frame) {
                     recognizer.state = .ended
                     let swap = view.getImageName()
@@ -265,7 +265,6 @@ class NumbersView: UIView {
                     UIView.animate(withDuration:0.6, delay: 1.4, options: .curveEaseInOut, animations: {
                         self.elementViews[0].transform = CGAffineTransform(scaleX: 3, y: 3)
                         self.elementViews[0].center = CGPoint(x:                         self.elementViews[0].center.x, y: self.elementViews[0].center.y - self.animationDeltaY!)
-                        print(self.elementViews[0].center.y)
                     })
                 }
             }
