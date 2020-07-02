@@ -56,14 +56,42 @@ class NumbersView: UIView {
         animationCount = 0
     }
     
+    func setupTutorial() {
+           gameOver = false
+           
+        print("TUTORIAL")
+        
+           let tutorialSequence = [0, 4, 2, 3, 1, 5, 6, 7] // Use for slightly correct order
+           
+           for (index, element) in elementViews.enumerated() {
+               element.setIndex(i: index)
+               element.setImageName(image: String(tutorialSequence[index] + 1) + "_chick" )
+               element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
+           }
+           
+       }
+
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
         gameOver = false
+<<<<<<< HEAD
 //        let sequence = 0 ..< 8 // Comment out if not random order
 //        let shuffledSequence = sequence.shuffled() // Use for random order
+=======
+<<<<<<< HEAD
+    //let sequence = 0 ..< 8 // Comment out if not random order
+     //let shuffledSequence = sequence.shuffled() // Use for random order
+           let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
+    // let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+    //let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
+=======
+        let sequence = 0 ..< 8 // Comment out if not random order
+        let shuffledSequence = sequence.shuffled() // Use for random order
+>>>>>>> 3f058feee30b2682b213b6f9b1911a068f8a8748
 //        let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
         let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
 //        let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
+>>>>>>> 8689938c867ff65fc766b85712947f7ab82a9a3f
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
             element.setIndex(i: index)

@@ -9,7 +9,7 @@ import UIKit
 
 class ClockViewController: UIViewController {
 
-    private let symbolSequence: [String] = ["chick", "match"]
+    private let symbolSequence: [String] = ["chick", "chick", "match"]
     private var currentSymbolIndex: Int?
     private var firstOpen: Bool?
     private var dialogueTimer: Timer?
@@ -40,9 +40,16 @@ class ClockViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
+<<<<<<< HEAD
         selectionFeedbackGenerator = UISelectionFeedbackGenerator()
         
         dialogueTimerCount = 0
+=======
+       
+        numbersView.setupTutorial()
+        
+        
+>>>>>>> 3f058feee30b2682b213b6f9b1911a068f8a8748
         firstOpen = true
         clockView.alpha = 0
         camera.alpha = 0
@@ -136,6 +143,18 @@ class ClockViewController: UIViewController {
         restartButton.layer.cornerRadius = 23
         nextButton.layer.cornerRadius = 23
     }
+    
+    init(asTutorial: Bool){
+       super.init(nibName: "ClockViewController", bundle: nil)
+            if (asTutorial){
+                numbersView?.setupTutorial()
+            }
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     
     @IBAction func onHelp(_ sender: Any) {
         selectionFeedbackGenerator!.selectionChanged()
