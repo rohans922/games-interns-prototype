@@ -102,7 +102,7 @@ class ClockViewController: UIViewController {
     
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         let touch: UITouch? = touches.first
-        if touch?.view == animationImage {
+        if touch?.view == filmBackground {
             numbersView.startAnimation()
         }
     }

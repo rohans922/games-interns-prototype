@@ -43,7 +43,13 @@
                         <constraint firstAttribute="width" secondItem="r3q-uU-Uhj" secondAttribute="height" multiplier="1:1" id="hIe-YC-eZa"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-nq-FVf" userLabel="Film Background">
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paM-rc-oCQ" userLabel="Animation Image">
+                    <rect key="frame" x="163" y="239.5" width="88" height="88"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="paM-rc-oCQ" secondAttribute="height" multiplier="1:1" id="CEp-CB-l8o"/>
+                    </constraints>
+                </imageView>
+                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="film_background.png" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-nq-FVf" userLabel="Film Background">
                     <rect key="frame" x="96.5" y="220" width="221" height="127"/>
                     <constraints>
                         <constraint firstAttribute="width" secondItem="TUe-nq-FVf" secondAttribute="height" multiplier="87:50" id="EXG-FT-QXa"/>
@@ -168,12 +174,6 @@
                         <constraint firstItem="hiS-Vt-tDs" firstAttribute="leading" secondItem="bem-0g-JsJ" secondAttribute="leading" constant="14" id="uTO-9o-bCn"/>
                     </constraints>
                 </view>
-                <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="paM-rc-oCQ" userLabel="Animation Image">
-                    <rect key="frame" x="163" y="239.5" width="88" height="88"/>
-                    <constraints>
-                        <constraint firstAttribute="width" secondItem="paM-rc-oCQ" secondAttribute="height" multiplier="1:1" id="CEp-CB-l8o"/>
-                    </constraints>
-                </imageView>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-2l-YXY" userLabel="Final Animation View">
                     <rect key="frame" x="122" y="222.5" width="170" height="170"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
