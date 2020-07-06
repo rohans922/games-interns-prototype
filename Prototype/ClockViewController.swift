@@ -38,6 +38,38 @@ class ClockViewController: UIViewController {
     @IBOutlet weak var finalAnimationLocation: UIView!
     
     
+    @IBAction func rulesPopUp(_ sender: Any) {
+        
+//        if let menuVC = Bundle.main.loadNibNamed("MenuViewController", owner: nil, options: nil)?.first as? MenuViewController {
+//            menuVC.profileType = profileType
+//            vc.present(menuVC, animated: true, completion: nil)
+//        }
+        
+        if let rulesPopUp = Bundle.main.loadNibNamed("RulesViewController", owner: nil, options: nil)?.first as? RulesViewController{
+            
+            self.addChild(rulesPopUp)
+            rulesPopUp.view.frame = self.view.frame
+            self.view.addSubview(rulesPopUp.view)
+            rulesPopUp.didMove(toParent: self)
+        }
+        
+//        let rulesPopUp =
+//            //UINib (nibName: "RulesViewController", bundle: nil) as! RulesViewController
+//
+//            //UIViewController(nibName: "RulesViewController", bundle: nil) as! RulesViewController
+//
+//        self.addChild(rulesPopUp)
+//
+//        rulesPopUp.view.frame = self.view.frame
+//
+//        self.view.addSubview(rulesPopUp.view)
+//
+//        rulesPopUp.didMove(toParent: self)
+//
+    
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white

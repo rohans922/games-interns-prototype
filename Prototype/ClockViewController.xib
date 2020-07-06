@@ -25,7 +25,6 @@
                 <outlet property="numbersView" destination="ruU-37-V1l" id="Ohe-ZX-Qug"/>
                 <outlet property="restartButton" destination="9D4-Ri-qCO" id="PWs-8H-zfR"/>
                 <outlet property="roundArrow" destination="NHw-iZ-Vsg" id="Fub-XK-OSm"/>
-                <outlet property="ruleView" destination="ywG-m8-pMh" id="I6N-FB-88c"/>
                 <outlet property="titleLabel" destination="hiS-Vt-tDs" id="GLM-QK-6Jl"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
                 <outlet property="winMessage" destination="8Or-nQ-4NO" id="h81-O3-xiu"/>
@@ -163,6 +162,14 @@
                                 <action selector="onHelp:" destination="-1" eventType="touchUpInside" id="d8E-Pa-ubp"/>
                             </connections>
                         </button>
+                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unw-H4-hhW">
+                            <rect key="frame" x="243" y="112" width="38" height="30"/>
+                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <state key="normal" title="Show"/>
+                            <connections>
+                                <action selector="rulesPopUp:" destination="-1" eventType="touchUpInside" id="pwZ-Xl-O6l"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
@@ -208,11 +215,6 @@
                         <constraint firstAttribute="trailing" secondItem="QTc-oe-u93" secondAttribute="trailing" constant="10" id="okK-Pj-eCP"/>
                         <constraint firstAttribute="width" constant="208" id="zB6-R7-Frd"/>
                     </constraints>
-                </view>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywG-m8-pMh" customClass="RulesView" customModule="Prototype" customModuleProvider="target">
-                    <rect key="frame" x="0.0" y="146" width="439" height="615"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                    <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                 </view>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

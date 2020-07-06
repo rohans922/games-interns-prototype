@@ -64,7 +64,10 @@ class NumbersView: UIView {
                element.setImageName(image: String(tutorialSequence[index] + 1) + "_chick" )
                element.setSwapIndices((index + 3) % 8, (index + 5) % 8)
            }
-       }
+        
+        
+        
+    }
 
     func setupProject(symbol: String? = "chick") {
         currentSymbol = symbol
