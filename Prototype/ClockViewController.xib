@@ -149,23 +149,15 @@
                                 <action selector="onRetry:" destination="-1" eventType="touchUpInside" id="Z7w-az-YDj"/>
                             </connections>
                         </button>
-                        <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xiS-u2-ACM">
-                            <rect key="frame" x="308" y="104" width="38" height="38"/>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unw-H4-hhW">
+                            <rect key="frame" x="310" y="104" width="39" height="38"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="38" id="bA5-eS-Cwo"/>
-                                <constraint firstAttribute="width" constant="38" id="iSP-Il-jWG"/>
+                                <constraint firstAttribute="width" constant="39" id="3It-8x-mWc"/>
+                                <constraint firstAttribute="height" constant="38" id="UnZ-Kx-ynU"/>
                             </constraints>
                             <state key="normal" image="help_button.png">
-                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                             </state>
-                            <connections>
-                                <action selector="onHelp:" destination="-1" eventType="touchUpInside" id="d8E-Pa-ubp"/>
-                            </connections>
-                        </button>
-                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="unw-H4-hhW">
-                            <rect key="frame" x="243" y="112" width="38" height="30"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <state key="normal" title="Show"/>
                             <connections>
                                 <action selector="rulesPopUp:" destination="-1" eventType="touchUpInside" id="pwZ-Xl-O6l"/>
                             </connections>
@@ -173,13 +165,13 @@
                     </subviews>
                     <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
-                        <constraint firstAttribute="bottom" secondItem="xiS-u2-ACM" secondAttribute="bottom" constant="6" id="ABS-CT-d5Z"/>
                         <constraint firstAttribute="bottom" secondItem="eGx-91-K3w" secondAttribute="bottom" constant="6" id="AKR-tC-t3N"/>
-                        <constraint firstItem="eGx-91-K3w" firstAttribute="leading" secondItem="xiS-u2-ACM" secondAttribute="trailing" constant="18" id="OVl-dP-3lX"/>
                         <constraint firstAttribute="trailing" secondItem="eGx-91-K3w" secondAttribute="trailing" constant="14" id="ftJ-qC-Mac"/>
                         <constraint firstAttribute="bottom" secondItem="hiS-Vt-tDs" secondAttribute="bottom" constant="6" id="omK-Ek-Jmt"/>
                         <constraint firstAttribute="height" constant="148" id="rtX-qg-39t"/>
                         <constraint firstItem="hiS-Vt-tDs" firstAttribute="leading" secondItem="bem-0g-JsJ" secondAttribute="leading" constant="14" id="uTO-9o-bCn"/>
+                        <constraint firstItem="unw-H4-hhW" firstAttribute="top" secondItem="eGx-91-K3w" secondAttribute="top" id="wek-XU-bC0"/>
+                        <constraint firstItem="eGx-91-K3w" firstAttribute="leading" secondItem="unw-H4-hhW" secondAttribute="trailing" constant="15" id="wiv-hv-k31"/>
                     </constraints>
                 </view>
                 <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2tQ-2l-YXY" userLabel="Final Animation View">
