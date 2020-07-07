@@ -237,6 +237,7 @@ class ClockViewController: UIViewController {
                     self.filmBackground.alpha = 1
                 })
             } else {
+                self.numbersView.setupTutorial()
                 let rulesPopUp = RulesViewController(nibName: "RulesViewController", bundle: nil)
                 rulesPopUp.setDelegate(self, isFirst: true)
                 self.addChild(rulesPopUp)
@@ -267,6 +268,7 @@ extension ClockViewController: RulesViewControllerDelegate {
                         self.numbersView.showHighlightsFor(index: self.dialogueTimerCount!)
                         self.dialogueTimerCount! += 1
                         if (self.dialogueTimerCount == 8) {
+                            self.numbersView.startGame()
                             UIView.animate(withDuration:0.3, animations: {
                                 self.tutorialText.alpha = 0
                             })
