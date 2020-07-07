@@ -94,7 +94,7 @@
 		1C156D79249C0A8F00BE2F95 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1C82E27424A25789001B5F7F /* ElementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ElementView.swift; sourceTree = "<group>"; };
 		1C82E27624A25797001B5F7F /* ElementView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ElementView.xib; sourceTree = "<group>"; };
-		1CA7AD0C249AA5980064282D /* Prototype.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Prototype.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		1CA7AD0C249AA5980064282D /* Animatic.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Animatic.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1CA7AD0F249AA5980064282D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1CA7AD11249AA5980064282D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		1CA7AD18249AA59C0064282D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -215,7 +215,7 @@
 		1CA7AD0D249AA5980064282D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				1CA7AD0C249AA5980064282D /* Prototype.app */,
+				1CA7AD0C249AA5980064282D /* Animatic.app */,
 				1CA7AD22249AA59D0064282D /* PrototypeTests.xctest */,
 				1CA7AD2D249AA59D0064282D /* PrototypeUITests.xctest */,
 			);
@@ -375,7 +375,7 @@
 			);
 			name = Prototype;
 			productName = Prototype;
-			productReference = 1CA7AD0C249AA5980064282D /* Prototype.app */;
+			productReference = 1CA7AD0C249AA5980064282D /* Animatic.app */;
 			productType = "com.apple.product-type.application";
 		};
 		1CA7AD21249AA59D0064282D /* PrototypeTests */ = {
@@ -703,7 +703,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.2020interns.Prototype;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Animatic;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -721,7 +721,7 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.2020interns.Prototype;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Animatic;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
