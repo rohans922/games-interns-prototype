@@ -1,94 +1,118 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
-    <customFonts key="customFonts">
-        <array key="NYTFranklinMedium.otf">
-            <string>NYTFranklin-Medium</string>
-        </array>
-        <array key="NYTKarnakCondensed-Bold.otf">
-            <string>NYTKarnakCondensed-Bold</string>
-        </array>
-    </customFonts>
     <objects>
-        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="Prototype" customModuleProvider="target"/>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="RulesViewController" customModule="Prototype" customModuleProvider="target">
+            <connections>
+                <outlet property="instructionLabel" destination="6uZ-vZ-8lI" id="f5i-wS-mGr"/>
+                <outlet property="listLabel" destination="5hd-JQ-nV4" id="hXy-t0-jaJ"/>
+                <outlet property="mainView" destination="2Fa-pp-Rkz" id="yyh-lU-45f"/>
+                <outlet property="resetButton" destination="lc5-yy-lQl" id="jTY-Ep-fgq"/>
+                <outlet property="rulesTitleLabel" destination="fc6-eM-h5s" id="LoP-kY-9rd"/>
+                <outlet property="view" destination="LXc-sK-bjQ" id="oLK-UJ-pxq"/>
+            </connections>
+        </placeholder>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <viewController title="RulesViewController" nibName="RulesViewController" id="fgW-u9-HlH" customClass="RulesViewController" customModule="Prototype" customModuleProvider="target">
-            <view key="view" contentMode="scaleToFill" id="OI5-NG-27j">
-                <rect key="frame" x="0.0" y="0.0" width="292" height="529"/>
-                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Rules" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y89-KR-X0V">
-                        <rect key="frame" x="106" y="78" width="81" height="44"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" name="NYTKarnakCondensed-Bold" family="NYTKarnak Condensed" pointSize="36"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Organize the frames in the correct sequence to reveal an animation!" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="f8E-gx-Sku">
-                        <rect key="frame" x="22" y="139" width="248" height="53"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" name="NYTFranklin-Medium" family="NYTFranklin" pointSize="16"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="omm-up-xmH">
-                        <rect key="frame" x="117" y="184" width="58" height="17"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GId-Tg-Prj">
-                        <rect key="frame" x="239" y="31" width="37" height="24"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                        <state key="normal" title="X">
-                            <color key="titleColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        </state>
-                        <connections>
-                            <action selector="closeRulesPopUp:" destination="-1" eventType="touchUpInside" id="VZy-vG-FOG"/>
-                        </connections>
-                    </button>
-                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jIo-k2-PTJ">
-                        <rect key="frame" x="11" y="213" width="271" height="256"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <string key="text">•  The animation starts from the top,  
-    under the  film camera icon.
-•  Tap and hold a frame to see where it 
-    can be switched. Frames can only 
-    switch with those that are    
-    highlighted.
-• Drag and drop frames to switch 
-   them. 
-• You can preview your animation 
-   each time you switch frames. You 
-   can also tap it to replay.</string>
-                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                        <fontDescription key="fontDescription" name="NYTFranklin-Medium" family="NYTFranklin" pointSize="16"/>
-                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                    </textView>
-                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AJX-HU-jNs">
-                        <rect key="frame" x="102" y="455" width="89" height="30"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <state key="normal" title="Reset Puzzle">
-                            <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
-                        </state>
-                    </button>
-                </subviews>
-                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                <rect key="contentStretch" x="0.0" y="0.0" width="0.25" height="1"/>
-                <viewLayoutGuide key="safeArea" id="SfN-Uq-p0I"/>
-            </view>
-            <size key="freeformSize" width="292" height="529"/>
-            <point key="canvasLocation" x="210.1449275362319" y="16.40625"/>
-        </viewController>
+        <view contentMode="scaleToFill" id="LXc-sK-bjQ">
+            <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2Fa-pp-Rkz">
+                    <rect key="frame" x="41" y="263" width="332" height="370.5"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DGe-Tm-QOz">
+                            <rect key="frame" x="301" y="16" width="15" height="15"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="15" id="EdP-uw-dpR"/>
+                                <constraint firstAttribute="width" constant="15" id="jsI-lk-TZR"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                            <state key="normal" title="X">
+                                <color key="titleColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="closeRulesPopUp:" destination="-1" eventType="touchUpInside" id="m3S-MI-mt1"/>
+                            </connections>
+                        </button>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc6-eM-h5s">
+                            <rect key="frame" x="123" y="54" width="86" height="43"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="36"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Organize the frames in the correct sequence to reveal an animation!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6uZ-vZ-8lI">
+                            <rect key="frame" x="20" y="99" width="292" height="38.5"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5hd-JQ-nV4" userLabel="Text">
+                            <rect key="frame" x="17" y="192.5" width="298" height="0.0"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="________" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z3B-iz-RmI">
+                            <rect key="frame" x="137" y="147.5" width="58" height="20.5"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="20.5" id="75t-kY-g0z"/>
+                                <constraint firstAttribute="width" constant="58" id="mMe-El-MhK"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lc5-yy-lQl">
+                            <rect key="frame" x="77.5" y="221.5" width="177" height="40"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="40" id="iDO-Fz-qFx"/>
+                                <constraint firstAttribute="width" constant="177" id="s54-Pz-AKW"/>
+                            </constraints>
+                            <state key="normal">
+                                <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="resetButton:" destination="-1" eventType="touchUpInside" id="TgP-ZN-zpN"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                    <constraints>
+                        <constraint firstAttribute="trailing" secondItem="5hd-JQ-nV4" secondAttribute="trailing" constant="17" id="1b9-E5-oyP"/>
+                        <constraint firstItem="6uZ-vZ-8lI" firstAttribute="top" secondItem="fc6-eM-h5s" secondAttribute="bottom" constant="2" id="7Uu-K0-bAO"/>
+                        <constraint firstAttribute="trailing" secondItem="6uZ-vZ-8lI" secondAttribute="trailing" priority="900" constant="20" id="9dk-bA-YDI"/>
+                        <constraint firstItem="5hd-JQ-nV4" firstAttribute="leading" secondItem="2Fa-pp-Rkz" secondAttribute="leading" constant="17" id="D9w-Qv-od4"/>
+                        <constraint firstItem="Z3B-iz-RmI" firstAttribute="centerX" secondItem="2Fa-pp-Rkz" secondAttribute="centerX" id="LX6-Y7-yLh"/>
+                        <constraint firstAttribute="trailing" secondItem="DGe-Tm-QOz" secondAttribute="trailing" constant="16" id="S2I-Bv-9bQ"/>
+                        <constraint firstItem="Z3B-iz-RmI" firstAttribute="top" secondItem="6uZ-vZ-8lI" secondAttribute="bottom" constant="10" id="cig-lI-u8S"/>
+                        <constraint firstItem="fc6-eM-h5s" firstAttribute="top" secondItem="2Fa-pp-Rkz" secondAttribute="top" constant="54" id="fPr-iu-h7J"/>
+                        <constraint firstItem="lc5-yy-lQl" firstAttribute="centerX" secondItem="2Fa-pp-Rkz" secondAttribute="centerX" id="jbz-Sl-oFv"/>
+                        <constraint firstItem="DGe-Tm-QOz" firstAttribute="top" secondItem="2Fa-pp-Rkz" secondAttribute="top" constant="16" id="pFU-PA-Tnj"/>
+                        <constraint firstAttribute="bottom" secondItem="lc5-yy-lQl" secondAttribute="bottom" constant="109" id="uEx-AS-gPd"/>
+                        <constraint firstItem="6uZ-vZ-8lI" firstAttribute="centerX" secondItem="2Fa-pp-Rkz" secondAttribute="centerX" id="uMh-6K-1lr"/>
+                        <constraint firstItem="lc5-yy-lQl" firstAttribute="top" secondItem="5hd-JQ-nV4" secondAttribute="bottom" constant="29" id="v3t-rX-DUv"/>
+                        <constraint firstItem="6uZ-vZ-8lI" firstAttribute="leading" secondItem="2Fa-pp-Rkz" secondAttribute="leading" priority="900" constant="20" id="vna-pt-cta"/>
+                        <constraint firstItem="5hd-JQ-nV4" firstAttribute="top" secondItem="6uZ-vZ-8lI" secondAttribute="bottom" constant="55" id="xbd-nf-IdP"/>
+                        <constraint firstItem="fc6-eM-h5s" firstAttribute="centerX" secondItem="2Fa-pp-Rkz" secondAttribute="centerX" id="yzn-lf-enr"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <rect key="contentStretch" x="0.0" y="0.0" width="0.25" height="1"/>
+            <constraints>
+                <constraint firstItem="2Fa-pp-Rkz" firstAttribute="centerY" secondItem="LXc-sK-bjQ" secondAttribute="centerY" id="9Ry-lQ-SWS"/>
+                <constraint firstItem="2Fa-pp-Rkz" firstAttribute="centerX" secondItem="LXc-sK-bjQ" secondAttribute="centerX" id="HWM-nK-6Ca"/>
+                <constraint firstItem="2Fa-pp-Rkz" firstAttribute="leading" secondItem="oPj-QB-Ewm" secondAttribute="leading" constant="41" id="W0q-Av-al3"/>
+                <constraint firstItem="2Fa-pp-Rkz" firstAttribute="trailing" secondItem="oPj-QB-Ewm" secondAttribute="trailing" constant="-41" id="wOh-2n-C5r"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="oPj-QB-Ewm"/>
+            <point key="canvasLocation" x="63.768115942028992" y="585.9375"/>
+        </view>
     </objects>
 </document>

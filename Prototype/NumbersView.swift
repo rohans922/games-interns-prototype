@@ -9,7 +9,7 @@ import UIKit
 
 protocol NumbersViewDelegate {
     func whenFinished()
-    func animateSequence(elementViews: [ElementView])
+    func animateSequence(elementViews: [ElementView], clicked: Bool?)
     func setAnimationImage(image: String)
     func whenAnimatingEnd()
 }
@@ -77,7 +77,7 @@ class NumbersView: UIView {
     //let sequence = 0 ..< 8 // Comment out if not random order
      //let shuffledSequence = sequence.shuffled() // Use for random order
 //           let shuffledSequence = [7, 1, 6, 0, 5, 3, 2, 4] // Use for not random order
-    // let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
+//     let shuffledSequence = [0, 1, 7, 3, 4, 5, 6, 2] // Use for slightly correct order
     //let shuffledSequence = [0, 1, 2, 3, 4, 5, 6, 7] // Use for correct order
         currentSequence = shuffledSequence
         for (index, element) in elementViews.enumerated() {
@@ -156,7 +156,7 @@ class NumbersView: UIView {
     
     func startAnimation() {
         if (!gameOver!) {
-            delegate?.animateSequence(elementViews: elementViews)
+            delegate?.animateSequence(elementViews: elementViews, clicked: true)
         }
     }
 
@@ -164,6 +164,20 @@ class NumbersView: UIView {
         let xDist = a.x - b.x
         let yDist = a.y - b.y
         return CGFloat(sqrt(xDist * xDist + yDist * yDist))
+    }
+    
+    func showHighlightsFor(index: Int) {
+        let element = elementViews[index]
+        let swapIndices = element.getSwapIndices()
+        element.setMovingHighlight()
+        elementViews[swapIndices[0]].setMoveableHighlight()
+        elementViews[swapIndices[1]].setMoveableHighlight()
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.7) {
+            element.resetHighlight()
+            self.elementViews[swapIndices[0]].resetHighlight()
+            self.elementViews[swapIndices[1]].resetHighlight()
+        }
+        
     }
     
     private func handlePan(_ recognizer: UIPanGestureRecognizer) {
@@ -180,7 +194,9 @@ class NumbersView: UIView {
                     view.setImageName(image: elementViews[swapIndices[0]].getImageName())
                     elementViews[swapIndices[0]].setImageName(image: swap)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
-                        self.startAnimation()
+                        if (!self.gameOver!) {
+                            self.delegate?.animateSequence(elementViews: self.elementViews, clicked: false)
+                        }
                     }
                 } else if hitbox.intersects(elementViews[swapIndices[1]].frame) {
                     notificationFeedbackGenerator!.notificationOccurred(.success)
@@ -190,7 +206,7 @@ class NumbersView: UIView {
                     elementViews[swapIndices[1]].setImageName(image: swap)
                     DispatchQueue.main.asyncAfter(deadline: .now() + 0.3) {
                         if (!self.gameOver!) {
-                            self.delegate?.animateSequence(elementViews: self.elementViews)
+                            self.delegate?.animateSequence(elementViews: self.elementViews, clicked: false)
                         }
                     }
                 } else {

@@ -84,6 +84,10 @@ class ElementView: UIView {
         imageView.image = UIImage(named: (String(animationIndex! + 1)) + "_" + symbol!)
     }
     
+    func setQuickHighlight() {
+        
+    }
+    
     func setMoveableHighlight() {
         highlight.layer.cornerRadius = highlight.frame.height / 2
         highlight.backgroundColor = UIColor(red: 0.271, green: 0.239, blue: 0.202, alpha: 0.3)
@@ -105,16 +109,22 @@ class ElementView: UIView {
             notificationFeedbackGenerator!.notificationOccurred(.error)
         }
         isError = true
-        highlight.layer.cornerRadius = highlight.frame.height / 2
-        highlight.backgroundColor = UIColor(red: 0.8275, green: 0.0275, blue: 0, alpha: 0.5)
-        UIView.animate(withDuration:0.2, animations: {
-            self.highlight.alpha = 1
+        UIView.animate(withDuration:0.1, animations: {
+            self.elementView.transform = CGAffineTransform(translationX: 5, y: 0)
+        }, completion: {(value: Bool) in
+            UIView.animate(withDuration: 0.1, animations: {
+                self.elementView.transform = CGAffineTransform(translationX: -5, y: 0)
+            }, completion: {(value: Bool) in
+                UIView.animate(withDuration: 0.1, animations: {
+                    self.elementView.transform = .identity
+                })
+            })
         })
     }
     
     func setMovingHighlight() {
         highlight.layer.cornerRadius = highlight.frame.height / 2
-        highlight.backgroundColor = UIColor(red: 1, green: 0.937, blue: 0, alpha: 0.4)
+        highlight.backgroundColor = UIColor(red: 0.2, green: 0.4, blue: 0.6275, alpha: 0.8)
         UIView.animate(withDuration:0.1, animations: {
             self.highlight.alpha = 1
         })
